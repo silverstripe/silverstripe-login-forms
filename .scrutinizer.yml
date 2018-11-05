@@ -12,7 +12,7 @@ build:
 
   dependencies:
     override:
-      - yarn && yarn install
+      - npm install -g yarn && yarn && yarn install
 
 filter:
   paths: ["src/*", "tests/*"]
