@@ -3,6 +3,7 @@ SilverStripe\LoginForms\EnablerExtension:
   login_themes:
     - "silverstripe/login-forms:accessway"
     - $default
+  excluded_actions: ['index', 'logout', 'ping']
 SilverStripe\Security\Security:
   extensions:
     - SilverStripe\LoginForms\EnablerExtension
