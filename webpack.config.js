@@ -2,9 +2,6 @@ const Path = require('path');
 // Import the core config
 const webpackConfig = require('@silverstripe/webpack-config');
 const {
-  resolveJS,
-  externalJS,
-  moduleJS,
   moduleCSS,
   pluginCSS,
 } = webpackConfig;
@@ -19,20 +16,6 @@ const PATHS = {
 };
 
 const config = [
-  {
-    name: 'js',
-    entry: {
-      bundle: `${PATHS.SRC}/bundles/bundle.js`,
-    },
-    output: {
-      path: PATHS.DIST,
-      filename: 'js/[name].js',
-    },
-    devtool: (ENV !== 'production') ? 'source-map' : '',
-    resolve: resolveJS(ENV, PATHS),
-    externals: externalJS(ENV, PATHS),
-    module: moduleJS(ENV, PATHS),
-  },
   {
     name: 'css',
     entry: {

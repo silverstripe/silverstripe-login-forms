@@ -1,0 +1,82 @@
+$cms-border: #ced5e1;
+$cms-text-darkbg: white;
+$cms-danger: #d40404;
+$cms-button: #008a00;
+$cms-button-dim: darken($cms-button, 10%);
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.field {
+  margin-bottom: 1em;
+}
+
+.text input {
+  font-size: 1em;
+  padding: 0.7em;
+}
+
+.middleColumn { // sass-lint:disable-line class-name-format
+  margin: 0.2em 0;
+}
+
+.field.message {
+  font-size: 0.8em;
+  margin-top: 0.5em;
+  display: block;
+}
+
+.message.required {
+  color: $cms-danger;
+}
+
+.btn-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input {
+  background: $cms-text-darkbg;
+  padding: 0.4em 0.5em;
+  box-sizing: border-box;
+  border: 1px solid $cms-border;
+  border-radius: 2px;
+  width: 100%;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  margin-right: 0;
+  margin-left: 0;
+  width: auto;
+  vertical-align: bottom;
+}
+
+button,
+input[type=button],
+input[type=submit] {
+  background: $cms-button;
+  border: 1px solid $cms-button;
+  border-radius: 3px;
+  padding: 0.5rem 1em;
+  color: $cms-text-darkbg;
+  width: auto;
+}
+
+button:hover,
+input[type=button]:hover,
+input[type=submit]:hover {
+  background: lighten($cms-button-dim, 2.5%);
+  border-color: $cms-button-dim;
+}
+
+button:active,
+input[type=button]:active,
+input[type=submit]:active {
+  background: $cms-button-dim;
+  border-color: darken($cms-button-dim, 2.5%);
+}
