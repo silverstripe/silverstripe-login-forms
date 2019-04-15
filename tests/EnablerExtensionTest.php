@@ -11,7 +11,7 @@ use SilverStripe\View\SSViewer;
 
 class EnablerExtensionTest extends FunctionalTest
 {
-    public function setUp()
+    protected function setUp()
     {
         parent::setUp();
         $config = Config::modify();
