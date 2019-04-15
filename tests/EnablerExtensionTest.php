@@ -41,4 +41,3 @@ class EnablerExtensionTest extends FunctionalTest
         $this->assertNotContains('silverstripe/login-forms:login-forms', SSViewer::get_themes());
     }
 }
-
