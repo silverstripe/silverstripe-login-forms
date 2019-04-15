@@ -13,7 +13,7 @@ use SilverStripe\Core\Config\Config;
  * This is in order to replace the set {@see SSViewer} theme list with a controlled set in order
  * to always show a consistent interface that relates more to the CMS than the website it is
  * loading on.
- * Particular actions can be set to be ignored by inlcuding them in the `excluded_actions` list
+ * Particular actions can be set to be ignored by including them in the `excluded_actions` list
  * defined in yml _config for this class. By default all allowed actions on the Security controller
  * excepting `index` and `ping` will have the new theme set applied.
  */
