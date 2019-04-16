@@ -29,6 +29,7 @@ fieldset {
   display: block;
 }
 
+.message.bad,
 .message.required {
   color: $cms-danger;
 }
@@ -46,6 +47,7 @@ input {
   border: 1px solid $cms-border;
   border-radius: 2px;
   width: 100%;
+  font-size: 1em;
 }
 
 input[type=checkbox],
