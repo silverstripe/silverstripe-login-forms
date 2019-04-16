@@ -3,13 +3,10 @@
   "version": "0.0.1",
   "description": "A collection of templates for the CMS login screens",
   "scripts": {
-    "build": "yarn && yarn lint && yarn test && NODE_ENV=production webpack -p --bail --progress",
+    "build": "yarn && yarn lint && NODE_ENV=production webpack -p --bail --progress",
     "watch": "yarn && NODE_ENV=development webpack --watch --progress",
     "css": "WEBPACK_CHILD=css npm run build",
-    "lint": "eslint client/src && sass-lint -v",
-    "test": "jest",
-    "coverage": "jest --coverage",
-    "js-fix": "eslint client/src --fix"
+    "lint": "sass-lint -v"
   },
   "repository": {
     "type": "git",

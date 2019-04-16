@@ -1,0 +1,7 @@
+
+---
+Name: login-forms
+---
+SilverStripe\Security\Security:
+  extensions:
+    - SilverStripe\LoginForms\EnablerExtension
