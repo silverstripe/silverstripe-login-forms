@@ -31,7 +31,7 @@ class EnablerExtensionTest extends FunctionalTest
 
     public function testThatSecurityActionsHaveUpdatedThemeListApplied()
     {
-        $this->get('Security/login');
+        $this->get(Security::login_url());
         $this->assertContains('silverstripe/login-forms:login-forms', SSViewer::get_themes());
     }
 
