@@ -11,13 +11,22 @@
         <% require css("silverstripe/login-forms: client/dist/styles/bundle.css") %>
     </head>
     <body>
-        <section>
+        <section class="log-in">
             <header>
-                <h1>
+                <h1 class="log-in__site-name">
                     $SiteConfig.Title
                     <% if not $SiteConfig.Title %>SilverStripe<% end_if %>
                 </h1>
             </header>
+            <% if $Message %>
+                <div class="log-in__message
+                    <% if $MessageType && not $AlertType %>log-in__message--$MessageType<% end_if %>
+                    <% if $AlertType %>log-in__message--$AlertType<% end_if %>"
+                >
+                    $Message
+                </div>
+            <% end_if %>
+            <% if $Content && $Content != $Message %><div class="log-in__content">$Content</div><% end_if %>
             $Form
         </section>
         <footer>
