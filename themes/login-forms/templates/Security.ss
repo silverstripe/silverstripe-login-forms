@@ -8,32 +8,38 @@
             $Metatags.RAW
         <% end_if %>
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <meta name="color-scheme" content="light dark" />
         <% require css("silverstripe/login-forms: client/dist/styles/bundle.css") %>
     </head>
     <body>
-        <section class="log-in">
-            <header>
-                <h1 class="log-in__site-name">
-                    $SiteConfig.Title
-                    <% if not $SiteConfig.Title %>SilverStripe<% end_if %>
-                </h1>
-            </header>
+        <header class="app-brand">
+            <% include AppBrand %>
+
+            <h1 class="app-brand__name">
+                $SiteConfig.Title
+                <% if not $SiteConfig.Title %>SilverStripe<% end_if %>
+            </h1>
+        </header>
+
+        <main class="login-form">
             <% if $Message %>
-                <div class="log-in__message
-                    <% if $MessageType && not $AlertType %>log-in__message--$MessageType<% end_if %>
-                    <% if $AlertType %>log-in__message--$AlertType<% end_if %>"
+                <p class="login-form__message
+                    <% if $MessageType && not $AlertType %>login-form__message--$MessageType<% end_if %>
+                    <% if $AlertType %>login-form__message--$AlertType<% end_if %>"
                 >
                     $Message
-                </div>
+                </p>
             <% end_if %>
-            <% if $Content && $Content != $Message %><div class="log-in__content">$Content</div><% end_if %>
+
+            <% if $Content && $Content != $Message %>
+                <div class="log-in__content">$Content</div>
+            <% end_if %>
+
             $Form
-        </section>
-        <footer>
-            <img
-                src="$resourceURL('silverstripe/login-forms:client/dist/img/SilverStripeLogo200.png')"
-                alt="<%t SilverStripe\LoginForms.SILVERSTRIPELOGO "SilverStripe Logo" %>"
-            />
+        </main>
+
+        <footer class="silverstripe-brand">
+            <% include SilverStripeLogo %>
         </footer>
     </body>
 </html>

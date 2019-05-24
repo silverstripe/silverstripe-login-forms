@@ -1,0 +1,24 @@
+html {
+  font: 14px/1.5 sans-serif;
+}
+
+a {
+  color: var(--color-link-primary);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.link--secondary {
+    color: var(--color-form-text);
+  }
+}
+
+label {
+  font-size: 0.9285714286rem;
+}
+
+input {
+  font-size: 1rem;
+}
