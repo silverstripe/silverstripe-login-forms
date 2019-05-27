@@ -1,3 +1,5 @@
+$mobile-breakpoint: 420px;
+
 $color-error: #DA273B;
 $color-form-background: #FFFFFF;
 $color-form-text: #4F5861;
@@ -25,16 +27,17 @@ $dark-color-page-text: #FFFFFE;
 $dark-color-submit-background: #F6C445;
 $dark-color-submit-text: #3E464E;
 
-$sizing-field-width: 300px;
+$sizing-app-brand-height: 40px;
+$sizing-content-width: 330px;
 
-$spacing-app-brand: 20px;
+$spacing-app-brand: 30px;
 $spacing-field-content: 8px;
-$spacing-form: 30px 40px 50px;
-$spacing-form-actions-top: 20px;
+$spacing-form: 30px 20px 40px;
+$spacing-form-desktop: 30px 30px 40px;
 $spacing-form-controls: 20px;
 $spacing-form-label-bottom: 5px;
 $spacing-silverstripe-brand: 30px;
-$spacing-submit-content: 10px 40px;
+$spacing-submit-content: 10px 20px;
 
 :root {
   --color-error: #{$color-error};
@@ -53,12 +56,13 @@ $spacing-submit-content: 10px 40px;
   --border-radius-field: #{$border-radius-field};
   --box-shadow-form: #{$box-shadow-form};
 
-  --sizing-field-width: #{$sizing-field-width};
+  --sizing-app-brand-height: #{$sizing-app-brand-height};
+  --sizing-content-width: #{$sizing-content-width};
 
   --spacing-app-brand: #{$spacing-app-brand};
   --spacing-field-content: #{$spacing-field-content};
   --spacing-form: #{$spacing-form};
-  --spacing-form-actions-top: #{$spacing-form-actions-top};
+  --spacing-form-desktop: #{$spacing-form-desktop};
   --spacing-form-controls: #{$spacing-form-controls};
   --spacing-form-label-bottom: #{$spacing-form-label-bottom};
   --spacing-silverstripe-brand: #{$spacing-silverstripe-brand};

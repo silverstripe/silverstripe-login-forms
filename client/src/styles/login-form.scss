@@ -15,14 +15,46 @@ html {
   &__logo + &__name {
     display: none;
   }
+
+  // Helper classes for Dark Mode support on image-based logos
+  &__logo--dark-mode {
+    display: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &__logo--light-mode {
+      display: none;
+    }
+
+    &__logo--dark-mode {
+      display: block;
+    }
+  }
+
 }
 
 .login-form {
   background-color: var(--color-form-background);
-  border-radius: var(--border-radius-form);
   box-shadow: var(--box-shadow-form);
   color: var(--color-form-text);
   padding: var(--spacing-form);
+  width: 100vw;
+
+  @media (min-width: 420px) {
+    border-radius: var(--border-radius-form);
+    padding: var(--spacing-form-desktop);
+    width: auto;
+  }
+}
+
+.login-form__title {
+  margin-top: 0;
+}
+
+.login-form__content,
+.login-form__message,
+.message {
+  max-width: var(--sizing-content-width);
 }
 
 .login-form__message--error,
@@ -57,8 +89,8 @@ input.text {
   padding: var(--spacing-field-content);
   width: 100%;
 
-  @media (min-width: 420px) {
-    width: var(--sizing-field-width);
+  @media (min-width: $mobile-breakpoint) {
+    width: var(--sizing-content-width);
   }
 }
 
@@ -67,7 +99,6 @@ input.text {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: var(--spacing-form-actions-top);
 }
 
 .login-form-actions__submit,

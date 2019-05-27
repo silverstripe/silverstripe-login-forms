@@ -22,6 +22,10 @@
         </header>
 
         <main class="login-form">
+            <% if $Title %>
+                <h2 class="login-form__title">$Title</h2>
+            <% end_if %>
+
             <% if $Message %>
                 <p class="login-form__message
                     <% if $MessageType && not $AlertType %>login-form__message--$MessageType<% end_if %>
@@ -32,7 +36,7 @@
             <% end_if %>
 
             <% if $Content && $Content != $Message %>
-                <div class="log-in__content">$Content</div>
+                <div class="login-form__content">$Content</div>
             <% end_if %>
 
             $Form
