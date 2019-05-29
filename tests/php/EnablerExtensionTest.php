@@ -10,6 +10,8 @@ use SilverStripe\View\SSViewer;
 
 class EnablerExtensionTest extends FunctionalTest
 {
+    protected $usesDatabase = true;
+
     protected function setUp()
     {
         parent::setUp();
