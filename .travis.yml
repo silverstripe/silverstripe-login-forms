@@ -2,6 +2,10 @@ language: php
 
 dist: trusty
 
+env:
+  global:
+    - TRAVIS_NODE_VERSION="10"
+
 matrix:
   include:
     - php: 5.6
