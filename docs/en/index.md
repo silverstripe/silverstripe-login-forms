@@ -1,16 +1,17 @@
 title: Login Forms
-summary: Customising the login forms for a SilverStripe site
+summary: Simplifying the login forms for a SilverStripe site
 
 # Introduction
 
 The [Login Forms module](https://addons.silverstripe.org/add-ons/silverstripe/login-forms) provides an improved default
 view for the authentication UIs in SilverStripe. Rather than applying the forms to the site's default Page template,
-Login Forms renders a simple, responsive, standalone interface, which can be tweaked to suit an individual SilverStripe
-site but doesn't require any extra work to incorporate the UI into the site's design.
+Login Forms renders a simple, responsive, standalone interface that aligns with the design of the CMS. This can be
+tweaked to suit an individual SilverStripe site, but doesn't require any extra work out of the box to incorporate the UI
+into the site's design.
 
-# Providing a custom logo
+# Providing a custom brand
 
-The Login Forms module supports use of a custom logo that will replace the Site Name above the form. The best way to
+The Login Forms module supports use of a custom brand that will replace the Site Name above the form. The best way to
 provide this is in SVG format, as one SVG can be used for all screen densities / display modes, whilst using images will
 require variations for each.
 
