@@ -2,7 +2,6 @@
 
 namespace SilverStripe\LoginForms\Tests;
 
-use SilverStripe\Control\HTTPRequest;
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Dev\FunctionalTest;
 use SilverStripe\LoginForms\EnablerExtension;
