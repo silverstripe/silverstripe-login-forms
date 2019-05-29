@@ -1,0 +1,97 @@
+html {
+  background-color: var(--color-page-background);
+  color: var(--color-page-text);
+}
+
+
+
+.login-form {
+  background-color: var(--color-form-background);
+  box-shadow: var(--box-shadow-form);
+  color: var(--color-form-text);
+  padding: var(--spacing-form);
+  width: 100vw;
+
+  @media (min-width: 420px) {
+    border-radius: var(--border-radius-form);
+    padding: var(--spacing-form-desktop);
+    width: auto;
+  }
+}
+
+.login-form__title {
+  margin-top: 0;
+}
+
+.login-form__content,
+.login-form__message,
+.message {
+  max-width: var(--sizing-content-width);
+}
+
+.login-form__message--warning,
+.message.warning {
+  color: var(--color-message-warning);
+}
+
+.login-form__message--error,
+.message.bad,
+.message.required {
+  color: var(--color-message-error);
+}
+
+.login-form__fields,
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.login-form-control,
+.field {
+  margin-bottom: var(--spacing-form-controls);
+}
+
+.login-form-control--text .login-form-control__label,
+.field.text label {
+  display: block;
+  margin-bottom: var(--spacing-form-label-bottom);
+}
+
+.login-form-control--text .login-form-control__field,
+input.text {
+  background-color: var(--color-field-background);
+  border: 1px solid var(--color-field-border);
+  border-radius: var(--border-radius-field);
+  color: var(--color-field-text);
+  padding: var(--spacing-field-content);
+  width: 100%;
+
+  @media (min-width: $mobile-breakpoint) {
+    width: var(--sizing-content-width);
+  }
+}
+
+.login-form-actions,
+.btn-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn,
+.action {
+  background-color: var(--color-button-secondary-background);
+  border: 1px solid currentColor;
+  border-radius: var(--border-radius-field);
+  color: var(--color-button-secondary-text);
+  cursor: pointer;
+  padding: var(--spacing-submit-content);
+}
+
+.btn-success,
+input[type="submit"] {
+  background-color: var(--color-button-primary-background);
+  color: var(--color-button-primary-text);
+  border: 0;
+}

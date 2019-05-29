@@ -21,7 +21,7 @@ composer require silverstripe/login-forms
 
 ## Documentation
 
-Please see the [user guide](docs/en/userguide/index.md) section.
+Please see the [documentation](docs/en/index.md).
 
 ## Contributing
 

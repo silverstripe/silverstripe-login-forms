@@ -2,7 +2,6 @@
 
 namespace SilverStripe\LoginForms\Tests;
 
-use SilverStripe\Control\HTTPRequest;
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Dev\FunctionalTest;
 use SilverStripe\LoginForms\EnablerExtension;
@@ -11,6 +10,8 @@ use SilverStripe\View\SSViewer;
 
 class EnablerExtensionTest extends FunctionalTest
 {
+    protected $usesDatabase = true;
+
     protected function setUp()
     {
         parent::setUp();

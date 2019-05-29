@@ -24,6 +24,7 @@ class EnablerExtension extends Extension
      * @config
      */
     private static $login_themes = [
+        '$public',
         'silverstripe/login-forms:login-forms',
         '$default',
     ];
