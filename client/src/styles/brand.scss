@@ -1,0 +1,44 @@
+.app-brand {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-app-brand);
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__name {
+    margin: 0;
+  }
+
+  &__logo + &__name {
+    display: none;
+  }
+
+  // Helper classes for Dark Mode support on image-based logos
+  &__logo--dark-mode {
+    display: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &__logo--light-mode {
+      display: none;
+    }
+
+    &__logo--dark-mode {
+      display: block;
+    }
+  }
+}
+
+.silverstripe-brand {
+  color: var(--color-page-text);
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-silverstripe-brand);
+}

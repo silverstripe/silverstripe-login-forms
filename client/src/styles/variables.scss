@@ -1,31 +1,39 @@
 $mobile-breakpoint: 420px;
 
-$color-error: #DA273B;
+$color-button-secondary-background: #FFFFFF;
+$color-button-secondary-text: #222222;
+$color-button-primary-background: #008A00;
+$color-button-primary-text: #FFFFFF;
 $color-form-background: #FFFFFF;
 $color-form-text: #4F5861;
 $color-field-text: #222222;
 $color-field-background: #FFFFFF;
 $color-field-border: #CED3D9;
 $color-link-primary: #0071C4;
+$color-message-error: #71141F;
+$color-message-warning: #856404;
 $color-page-background: #F6F7F8;
 $color-page-text: #222222;
-$color-submit-background: #008A00;
-$color-submit-text: #FFFFFF;
 
-$border-radius-form: 4px;
-$border-radius-field: 3px;
-$box-shadow-form: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-
+// Dark Mode color variants
+$dark-color-button-secondary-background: #3E464E;
+$dark-color-button-secondary-text: #FFFFFE;
+$dark-color-button-primary-background: #F6C445;
+$dark-color-button-primary-text: #3E464E;
 $dark-color-field-background: #4F5861;
 $dark-color-field-border: #4F5861;
 $dark-color-field-text: #FFFFFE;
 $dark-color-form-background: #3E464E;
 $dark-color-form-text: #F7F8FA;
 $dark-color-link-primary: #74D6F8;
+$dark-color-message-error: #DA273B;
+$dark-color-message-warning: #FFA500;
 $dark-color-page-background: #4F5861;
 $dark-color-page-text: #FFFFFE;
-$dark-color-submit-background: #F6C445;
-$dark-color-submit-text: #3E464E;
+
+$border-radius-form: 4px;
+$border-radius-field: 3px;
+$box-shadow-form: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 
 $sizing-app-brand-height: 40px;
 $sizing-content-width: 330px;
@@ -40,17 +48,20 @@ $spacing-silverstripe-brand: 30px;
 $spacing-submit-content: 10px 20px;
 
 :root {
-  --color-error: #{$color-error};
+  --color-button-secondary-background: #{$color-button-secondary-background};
+  --color-button-secondary-text: #{$color-button-secondary-text};
+  --color-button-primary-background: #{$color-button-primary-background};
+  --color-button-primary-text: #{$color-button-primary-text};
   --color-field-background: #{$color-field-background};
   --color-field-border: #{$color-field-border};
   --color-field-text: #{$color-field-text};
   --color-form-background: #{$color-form-background};
   --color-form-text: #{$color-form-text};
   --color-link-primary: #{$color-link-primary};
+  --color-message-error: #{$color-message-error};
+  --color-message-warning: #{$color-message-warning};
   --color-page-background: #{$color-page-background};
   --color-page-text: #{$color-page-text};
-  --color-submit-background: #{$color-submit-background};
-  --color-submit-text: #{$color-submit-text};
 
   --border-radius-form: #{$border-radius-form};
   --border-radius-field: #{$border-radius-field};
@@ -69,15 +80,19 @@ $spacing-submit-content: 10px 20px;
   --spacing-submit-content: #{$spacing-submit-content};
 
   @media (prefers-color-scheme: dark) {
+    --color-button-secondary-background: #{$dark-color-button-secondary-background};
+    --color-button-secondary-text: #{$dark-color-button-secondary-text};
+    --color-button-primary-background: #{$dark-color-button-primary-background};
+    --color-button-primary-text: #{$dark-color-button-primary-text};
     --color-field-background: #{$dark-color-field-background};
     --color-field-border: #{$dark-color-field-border};
     --color-field-text: #{$dark-color-field-text};
     --color-form-background: #{$dark-color-form-background};
     --color-form-text: #{$dark-color-form-text};
     --color-link-primary: #{$dark-color-link-primary};
+    --color-message-error: #{$dark-color-message-error};
+    --color-message-warning: #{$dark-color-message-warning};
     --color-page-background: #{$dark-color-page-background};
     --color-page-text: #{$dark-color-page-text};
-    --color-submit-background: #{$dark-color-submit-background};
-    --color-submit-text: #{$dark-color-submit-text};
   }
 }
