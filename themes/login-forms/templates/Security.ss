@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="$Lang">
+<html lang="$ContentLocale">
     <head>
         <% if $SiteConfig.Title %>
             <title>$SiteConfig.Title: <%t SilverStripe\LoginForms.LOGIN "Log in" %></title>
