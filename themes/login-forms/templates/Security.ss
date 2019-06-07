@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="$Lang">
+<html lang="$ContentLocale">
     <head>
         <% if $SiteConfig.Title %>
             <title>$SiteConfig.Title: <%t SilverStripe\LoginForms.LOGIN "Log in" %></title>
@@ -9,6 +9,7 @@
         <% end_if %>
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <meta name="color-scheme" content="light dark" />
+        <% require css("silverstripe/admin: client/dist/styles/bundle.css") %>
         <% require css("silverstripe/login-forms: client/dist/styles/bundle.css") %>
     </head>
     <body>

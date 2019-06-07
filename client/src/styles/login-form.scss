@@ -1,9 +1,11 @@
 html {
   background-color: var(--color-page-background);
   color: var(--color-page-text);
+
+  body {
+    background-color: inherit;
+  }
 }
-
-
 
 .login-form {
   background-color: var(--color-form-background);
@@ -58,17 +60,20 @@ fieldset {
   margin-bottom: var(--spacing-form-label-bottom);
 }
 
-.login-form-control--text .login-form-control__field,
-input.text {
-  background-color: var(--color-field-background);
-  border: 1px solid var(--color-field-border);
-  border-radius: var(--border-radius-field);
-  color: var(--color-field-text);
-  padding: var(--spacing-field-content);
-  width: 100%;
+// Note: nested for specificity priority against silverstripe/admin styles
+.login-form {
+  .login-form-control--text .login-form-control__field,
+  input.text {
+    background-color: var(--color-field-background);
+    border: 1px solid var(--color-field-border);
+    border-radius: var(--border-radius-field);
+    color: var(--color-field-text);
+    padding: var(--spacing-field-content);
+    width: 100%;
 
-  @media (min-width: $mobile-breakpoint) {
-    width: var(--sizing-content-width);
+    @media (min-width: $mobile-breakpoint) {
+      width: var(--sizing-content-width);
+    }
   }
 }
 
@@ -79,13 +84,17 @@ input.text {
   justify-content: space-between;
 }
 
-.btn,
 .action {
   background-color: var(--color-button-secondary-background);
   border: 1px solid currentColor;
   border-radius: var(--border-radius-field);
   color: var(--color-button-secondary-text);
   cursor: pointer;
+  padding: var(--spacing-submit-content);
+}
+
+.btn {
+  border-radius: var(--border-radius-field);
   padding: var(--spacing-submit-content);
 }
 

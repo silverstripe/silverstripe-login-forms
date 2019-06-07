@@ -1,35 +1,24 @@
 $mobile-breakpoint: 420px;
 
-$color-button-secondary-background: #FFFFFF;
-$color-button-secondary-text: #222222;
-$color-button-primary-background: #008A00;
-$color-button-primary-text: #FFFFFF;
-$color-form-background: #FFFFFF;
-$color-form-text: #4F5861;
-$color-field-text: #222222;
-$color-field-background: #FFFFFF;
-$color-field-border: #CED3D9;
-$color-link-primary: #0071C4;
-$color-message-error: #71141F;
+// Default colour variants
+$color-message-error: #71141f;
 $color-message-warning: #856404;
-$color-page-background: #F6F7F8;
-$color-page-text: #222222;
 
 // Dark Mode color variants
 $dark-color-button-secondary-background: #3E464E;
-$dark-color-button-secondary-text: #FFFFFE;
+$dark-color-button-secondary-text: $white;
 $dark-color-button-primary-background: #F6C445;
 $dark-color-button-primary-text: #3E464E;
 $dark-color-field-background: #4F5861;
 $dark-color-field-border: #4F5861;
-$dark-color-field-text: #FFFFFE;
+$dark-color-field-text: $white;
 $dark-color-form-background: #3E464E;
-$dark-color-form-text: #F7F8FA;
-$dark-color-link-primary: #74D6F8;
+$dark-color-form-text: $white;
+$dark-color-link-primary: $white;
 $dark-color-message-error: #DA273B;
 $dark-color-message-warning: #FFA500;
 $dark-color-page-background: #4F5861;
-$dark-color-page-text: #FFFFFE;
+$dark-color-page-text: $white;
 
 $border-radius-form: 4px;
 $border-radius-field: 3px;
@@ -48,20 +37,20 @@ $spacing-silverstripe-brand: 30px;
 $spacing-submit-content: 10px 20px;
 
 :root {
-  --color-button-secondary-background: #{$color-button-secondary-background};
-  --color-button-secondary-text: #{$color-button-secondary-text};
-  --color-button-primary-background: #{$color-button-primary-background};
-  --color-button-primary-text: #{$color-button-primary-text};
-  --color-field-background: #{$color-field-background};
-  --color-field-border: #{$color-field-border};
-  --color-field-text: #{$color-field-text};
-  --color-form-background: #{$color-form-background};
-  --color-form-text: #{$color-form-text};
-  --color-link-primary: #{$color-link-primary};
+  --color-button-secondary-background: #{$white};
+  --color-button-secondary-text: #{$gray-200};
+  --color-button-primary-background: #{$brand-success};
+  --color-button-primary-text: #{$white};
+  --color-field-background: #{$white};
+  --color-field-border: #{$gray-200};
+  --color-field-text: #{$gray-800};
+  --color-form-background: #{$white};
+  --color-form-text: #{$gray-700};
+  --color-link-primary: #{$link-color};
   --color-message-error: #{$color-message-error};
   --color-message-warning: #{$color-message-warning};
-  --color-page-background: #{$color-page-background};
-  --color-page-text: #{$color-page-text};
+  --color-page-background: #{lighten($gray-100, 3%)};
+  --color-page-text: #{$gray-800};
 
   --border-radius-form: #{$border-radius-form};
   --border-radius-field: #{$border-radius-field};

@@ -3,13 +3,10 @@
   justify-content: center;
   padding: var(--spacing-app-brand);
 
-  &__link {
-    color: inherit;
+  &__link,
+  &__link:hover {
+    color: var(--color-page-text);
     text-decoration: none;
-
-    &:hover {
-      text-decoration: none;
-    }
   }
 
   &__name {
