@@ -1,0 +1,29 @@
+// Overrides from the default design patterns in silverstripe/admin, specific for login-forms
+.btn-toolbar,
+.btn-toolbar p {
+  // Overrides admin style
+  margin-bottom: 0;
+}
+
+// Don't make validation messages render as Bootstrap alerts in this module
+.message {
+  border: 0;
+  padding: 0;
+
+  &.bad,
+  &.good,
+  &.warning {
+    background-color: transparent;
+  }
+}
+
+.form-group {
+  &:after {
+    border-bottom: 0;
+    margin: 0;
+  }
+}
+
+.field.checkbox label.right {
+  color: inherit;
+}
