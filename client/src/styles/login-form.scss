@@ -19,6 +19,21 @@ html {
     padding: var(--spacing-form-desktop);
     width: auto;
   }
+
+  // Note: nested for specificity priority against silverstripe/admin styles
+  .login-form-control--text .login-form-control__field,
+  input.text {
+    background-color: var(--color-field-background);
+    border: 1px solid var(--color-field-border);
+    border-radius: var(--border-radius-field);
+    color: var(--color-field-text);
+    padding: var(--spacing-field-content);
+    width: 100%;
+
+    @media (min-width: $mobile-breakpoint) {
+      width: var(--sizing-content-width);
+    }
+  }
 }
 
 .login-form__title {
@@ -38,6 +53,7 @@ html {
 
 .login-form__message--error,
 .message.bad,
+.message.error,
 .message.required {
   color: var(--color-message-error);
 }
@@ -58,23 +74,6 @@ fieldset {
 .field.text label {
   display: block;
   margin-bottom: var(--spacing-form-label-bottom);
-}
-
-// Note: nested for specificity priority against silverstripe/admin styles
-.login-form {
-  .login-form-control--text .login-form-control__field,
-  input.text {
-    background-color: var(--color-field-background);
-    border: 1px solid var(--color-field-border);
-    border-radius: var(--border-radius-field);
-    color: var(--color-field-text);
-    padding: var(--spacing-field-content);
-    width: 100%;
-
-    @media (min-width: $mobile-breakpoint) {
-      width: var(--sizing-content-width);
-    }
-  }
 }
 
 .login-form-actions,
