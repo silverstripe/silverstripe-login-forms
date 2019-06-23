@@ -9,8 +9,9 @@
 
 The [SilverStripe Login Forms module](https://github.com/silverstripe/silverstripe-login-forms) provides templates for the login screen.
 
-## Requirements
+![Login forms installed in the CMS](docs/en/_images/screenshot.png)
 
+## Requirements
 
 ### Installation
 
