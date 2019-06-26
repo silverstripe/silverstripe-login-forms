@@ -1,7 +1,7 @@
 {
     "name": "silverstripe/login-forms",
     "description": "A collection of templates for the CMS login screens",
-    "type": "silverstripe-vendormodule",
+    "type": "silverstripe-module",
     "license": "BSD-3-Clause",
     "homepage": "https://github.com/silverstripe/login-forms",
     "keywords": [
