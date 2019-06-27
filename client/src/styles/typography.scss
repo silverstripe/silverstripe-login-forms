@@ -1,3 +1,11 @@
+html {
+  font-size: 13px; // SilverStripe 3.x default is 12px
+}
+
+body {
+  font-size: 1rem;
+}
+
 a {
   color: var(--color-link-primary);
   text-decoration: none;
@@ -9,6 +17,28 @@ a {
   &.link--secondary {
     color: var(--color-form-text);
   }
+}
+
+.h1,
+h1,
+.h2,
+h2,
+.h3,
+h3,
+.h4,
+h4,
+.h5,
+h5,
+.h6,
+h6 {
+  line-height: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.2308rem;
+}
+
+h1 {
+  font-size: 1.693rem;
+  font-weight: 400;
 }
 
 h2 {

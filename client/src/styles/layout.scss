@@ -35,3 +35,10 @@ body {
   grid-column: 2;
   grid-row: 4;
 }
+
+// Replacing SilverStripe 4's .btn-toolbar styles in .Actions for SilverStripe 3
+.Actions {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}

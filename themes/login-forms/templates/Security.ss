@@ -9,6 +9,7 @@
         <% end_if %>
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <meta name="color-scheme" content="light dark" />
+        <% require css("framework/admin/css/screen.css") %>
         <% require css("login-forms/client/dist/styles/bundle.css") %>
     </head>
     <body>

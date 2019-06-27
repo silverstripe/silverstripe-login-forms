@@ -1,6 +1,6 @@
-// Overrides from the default design patterns in silverstripe/admin, specific for login-forms
-.btn-toolbar,
-.btn-toolbar p {
+// Overrides from the default design patterns in framework, specific for login-forms
+.Actions,
+.Actions p {
   // Overrides admin style
   margin-bottom: 0;
 }
@@ -25,6 +25,23 @@
   }
 }
 
-.field.checkbox label.right {
-  color: inherit;
+.field {
+  border-bottom: 0;
+  box-shadow: none;
+
+  &.checkbox {
+    padding-left: 0; // Remove SS3 form field column formatting
+
+    label.right {
+      color: inherit;
+    }
+  }
+
+  label.left {
+    padding: 0;
+  }
+
+  .middleColumn {
+    margin-left: 0; // Remove SS3 form field column formatting
+  }
 }
