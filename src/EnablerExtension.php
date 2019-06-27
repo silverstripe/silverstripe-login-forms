@@ -2,10 +2,10 @@
 
 namespace SilverStripe\LoginForms;
 
-use SilverStripe\View\SSViewer;
-use SilverStripe\Core\Extension;
-use SilverStripe\Security\Security;
-use SilverStripe\Core\Config\Config;
+use SSViewer;
+use Extension;
+use Security;
+use Config;
 
 /**
  * Applies to the {@see Security} controller in order to detect requests for actions related to
@@ -19,16 +19,6 @@ use SilverStripe\Core\Config\Config;
  */
 class EnablerExtension extends Extension
 {
-    /**
-     * @var array themes to use for log in page and related actions.
-     * @config
-     */
-    private static $login_themes = [
-        '$public',
-        'silverstripe/login-forms:login-forms',
-        '$default',
-    ];
-
     /**
      * Aids in preventing themes from being overridden in the case of delegating handlers
      * e.g. if an extension adds a route that should not be styled by login-forms, this config
@@ -51,7 +41,7 @@ class EnablerExtension extends Extension
         $excludedActions = $config->get(self::class, 'excluded_actions');
         $themeActions = array_diff($allowedActions, $excludedActions);
         if (in_array($action, $themeActions)) {
-            SSViewer::set_themes($config->get(self::class, 'login_themes'));
+            Config::inst()->update(SSViewer::class, 'theme', 'login_themes');
         }
     }
 }
