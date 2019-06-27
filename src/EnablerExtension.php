@@ -41,7 +41,7 @@ class EnablerExtension extends Extension
         $excludedActions = $config->get(self::class, 'excluded_actions');
         $themeActions = array_diff($allowedActions, $excludedActions);
         if (in_array($action, $themeActions)) {
-            Config::inst()->update(SSViewer::class, 'theme', 'login_themes');
+            SSViewer::set_theme('login-forms');
         }
     }
 }
