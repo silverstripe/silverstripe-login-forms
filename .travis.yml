@@ -9,11 +9,11 @@ env:
 matrix:
   include:
     - php: 7.1
-      env: DB=MYSQL CORE_RELEASE=3.7.x-dev PHPUNIT_TEST=1 PHPCS_TEST=1
+      env: DB=MYSQL CORE_RELEASE=3.7 PHPUNIT_TEST=1 PHPCS_TEST=1
     - php: 7.2
-      env: DB=MYSQL CORE_RELEASE=3.7.x-dev PHPUNIT_TEST=1
+      env: DB=MYSQL CORE_RELEASE=3.7 PHPUNIT_TEST=1
     - php: 7.3
-      env: DB=PGSQL CORE_RELEASE=3.7.x-dev PHPUNIT_COVERAGE_TEST=1
+      env: DB=PGSQL CORE_RELEASE=3.7 PHPUNIT_TEST=1
 
 before_script:
   # Init PHP
@@ -27,9 +27,5 @@ before_script:
   - cd ~/builds/ss
 
 script:
-  - if [[ $PHPUNIT_TEST ]]; then vendor/bin/phpunit; fi
-  - if [[ $PHPCS_TEST ]]; then vendor/bin/phpcs src tests; fi
-  - if [[ $PHPUNIT_COVERAGE_TEST ]]; then phpdbg -qrr vendor/bin/phpunit --coverage-clover=coverage.xml; fi
-
-after_success:
-  - if [[ $PHPUNIT_COVERAGE_TEST ]]; then bash <(curl -s https://codecov.io/bash) -f coverage.xml -F php; fi
+  - if [[ $PHPUNIT_TEST ]]; then vendor/bin/phpunit login-forms/tests; fi
+  - if [[ $PHPCS_TEST ]]; then vendor/bin/phpcs --standard=login-forms/phpcs.xml.dist login-forms/src login-forms/tests; fi

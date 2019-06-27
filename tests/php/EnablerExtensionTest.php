@@ -27,12 +27,12 @@ class EnablerExtensionTest extends FunctionalTest
     public function testThatSecurityActionsHaveUpdatedThemeListApplied()
     {
         $response = $this->get(Security::login_url());
-        $this->assertContains('app-brand__link', $response->getBody());
+        $this->assertContains('app-brand__link', (string) $response->getBody());
     }
 
     public function testThatExcludedActionsDoNotHaveTheUpdatedThemeListApplied()
     {
         $response = $this->get('Security/index');
-        $this->assertNotContains('app-brand__link', $response->getBody());
+        $this->assertNotContains('app-brand__link', (string) $response->getBody());
     }
 }
