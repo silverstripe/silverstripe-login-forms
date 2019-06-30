@@ -1,3 +1,26 @@
+// Variables from SilverStripe 4's admin variables.scss
+$white:     #fff; // bootstrap default
+$gray-700:  #43536d;
+$gray-100:  lighten($gray-700, 60%); // #eef0f4
+$gray-200:  lighten($gray-700, 50%); // #ced5e1
+$gray-300:  lighten($gray-700, 40%); // #aebace
+$gray-400:  lighten($gray-700, 30%); // #8f9fba
+$gray-500:  lighten($gray-700, 20%); // #6f84a7
+$gray-600:  lighten($gray-700, 10%); // #566b8d
+$gray-800:  darken($gray-700, 10%); // #303b4d
+$gray-900:  darken($gray-700, 20%); // #1c232e
+$black:     #000; // bootstrap default
+
+$brand-secondary: #005a93;
+$brand-secondary-hover: darken($brand-secondary, 2);
+$brand-primary: #29abe2;
+$brand-success: #3fa142;
+$brand-danger: #d40404;
+
+$link-color: #0071c4;
+$link-hover-color: darken($link-color, 5%);
+// End admin variables
+
 $mobile-breakpoint: 420px;
 
 // Default colour variants

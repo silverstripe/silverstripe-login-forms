@@ -2,29 +2,23 @@
 
 namespace SilverStripe\LoginForms\Tests;
 
-use SilverStripe\Core\Config\Config;
-use SilverStripe\Dev\FunctionalTest;
+use Config;
+use FunctionalTest;
 use SilverStripe\LoginForms\EnablerExtension;
-use SilverStripe\Security\Security;
-use SilverStripe\View\SSViewer;
+use Security;
+use SSViewer;
 
 class EnablerExtensionTest extends FunctionalTest
 {
     protected $usesDatabase = true;
 
-    protected function setUp()
+    public function setUp()
     {
         parent::setUp();
-        $config = Config::modify();
-        $config->set(SSViewer::class, 'themes', [
-            '$public',
-            '$default',
-        ]);
-        $config->set(EnablerExtension::class, 'login_themes', [
-            'silverstripe/login-forms:login-forms',
-            '$default',
-        ]);
-        $config->set(EnablerExtension::class, 'excluded_actions', [
+
+        $config = Config::inst();
+        $config->update(SSViewer::class, 'theme', null);
+        $config->update(EnablerExtension::class, 'excluded_actions', [
             'index',
             'ping',
         ]);
@@ -32,13 +26,13 @@ class EnablerExtensionTest extends FunctionalTest
 
     public function testThatSecurityActionsHaveUpdatedThemeListApplied()
     {
-        $this->get(Security::login_url());
-        $this->assertContains('silverstripe/login-forms:login-forms', SSViewer::get_themes());
+        $response = $this->get(Security::login_url());
+        $this->assertContains('app-brand__link', (string) $response->getBody());
     }
 
     public function testThatExcludedActionsDoNotHaveTheUpdatedThemeListApplied()
     {
-        $this->get('Security/index');
-        $this->assertNotContains('silverstripe/login-forms:login-forms', SSViewer::get_themes());
+        $response = $this->get('Security/index');
+        $this->assertNotContains('app-brand__link', (string) $response->getBody());
     }
 }
