@@ -34,12 +34,12 @@
             <% end_if %>
 
             <% if $Message %>
-                <p class="login-form__message
+                <div class="login-form__message
                     <% if $MessageType && not $AlertType %>login-form__message--$MessageType<% end_if %>
                     <% if $AlertType %>login-form__message--$AlertType<% end_if %>"
                 >
                     $Message
-                </p>
+                </div>
             <% end_if %>
 
             <% if $Content && $Content != $Message %>
