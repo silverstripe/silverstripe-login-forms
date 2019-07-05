@@ -23,11 +23,7 @@ class EnablerExtension extends Extension
      * @var array themes to use for log in page and related actions.
      * @config
      */
-    private static $login_themes = [
-        '$public',
-        'silverstripe/login-forms:login-forms',
-        '$default',
-    ];
+    private static $login_themes = [];
 
     /**
      * Aids in preventing themes from being overridden in the case of delegating handlers
