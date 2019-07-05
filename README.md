@@ -9,6 +9,14 @@
 
 The [SilverStripe Login Forms module](https://github.com/silverstripe/silverstripe-login-forms) provides templates for the login screen.
 
+SilverStripe defaults to using the standard `Page.ss` template for login forms,
+and is usually customised through the `Layout/Security.ss` template.
+This module overrides any template or theme inheritance,
+and uses it's own `Security.ss` template, in order to provide consistent
+styling and behaviour that's independent from the specifics in your project.
+This enables more sophisticated login styling, such
+as multi-factor authentication through [silverstripe/mfa](https://github.com/silverstripe/silverstripe-mfa).
+
 ![Login forms installed in the CMS](docs/en/_images/screenshot.png)
 
 ## Requirements
@@ -20,9 +28,45 @@ Install the package via composer.
 composer require silverstripe/login-forms
 ```
 
-## Documentation
+The module is enabled by default.
 
-Please see the [documentation](docs/en/index.md).
+## Usage
+
+### Customising your brand
+
+Even though this template is generic, it's often a good idea
+to add your own logo in order to make your login forms
+more recogniseable for your users. This can also help
+to prevent generic phishing attempts.
+
+Define an `app/templates/Includes/AppBrand.ss` template
+and add your own logo. Example:
+
+```html
+<div class="app-brand__logo">
+    <img src="logo.png" alt="My Brand" />
+</div>
+```
+ 
+### Replacing templates
+
+In the unlikely case that you want to re-introduce some customisations
+into this new template, you can give priority to your own project templates
+(`$default`), or your theme templates.
+
+```yml
+---
+Before:
+  - '#login-forms'
+---
+SilverStripe\LoginForms\EnablerExtension:
+  login_themes:
+    - '$default'
+    - 'mytheme'
+```
+
+Caution: Replacing the `Security.ss` template is not recommended,
+since it might change in the future.
 
 ## Contributing
 
