@@ -5,3 +5,9 @@ Name: login-forms
 SilverStripe\Security\Security:
   extensions:
     - SilverStripe\LoginForms\EnablerExtension
+
+SilverStripe\LoginForms\EnablerExtension:
+  login_themes:
+    - '$public'
+    - 'silverstripe/login-forms:login-forms'
+    - '$default'
