@@ -1,14 +1,18 @@
 $mobile-breakpoint: 420px;
 
 // Default colour variants
+$color-page-background: lighten($gray-100, 3%);
+$color-button-secondary-hover-background: darken($color-page-background, 5);
+
+$color-button-primary-background: #008A00;
+$color-button-primary-text: $white;
+$color-button-primary-hover-background: #006400;
+$color-button-primary-hover-text: $white;
+
 $color-message-error: #71141f;
 $color-message-warning: #856404;
 
 // Dark Mode color variants
-$dark-color-button-secondary-background: #3E464E;
-$dark-color-button-secondary-text: $white;
-$dark-color-button-primary-background: #F6C445;
-$dark-color-button-primary-text: #3E464E;
 $dark-color-field-background: #4F5861;
 $dark-color-field-border: #4F5861;
 $dark-color-field-text: $white;
@@ -19,6 +23,14 @@ $dark-color-message-error: #DA273B;
 $dark-color-message-warning: #FFA500;
 $dark-color-page-background: #4F5861;
 $dark-color-page-text: $white;
+
+$dark-color-button-secondary-hover-background: lighten($dark-color-page-background, 5);
+$dark-color-button-secondary-text: $dark-color-link-primary;
+$dark-color-button-secondary-hover-text: $dark-color-link-primary;
+$dark-color-button-primary-background: #F6C445;
+$dark-color-button-primary-text: $dark-color-form-background;
+$dark-color-button-primary-hover-background: #E0A800;
+$dark-color-button-primary-hover-text: $dark-color-button-primary-text;
 
 $border-radius-form: 4px;
 $border-radius-field: 3px;
@@ -37,10 +49,16 @@ $spacing-silverstripe-brand: 30px;
 $spacing-submit-content: 10px 20px;
 
 :root {
-  --color-button-secondary-background: #{$white};
-  --color-button-secondary-text: #{$gray-200};
-  --color-button-primary-background: #{$brand-success};
-  --color-button-primary-text: #{$white};
+  --color-button-secondary-background: transparent;
+  --color-button-secondary-hover-background: #{$color-button-secondary-hover-background};
+  --color-button-secondary-text: #{$link-color};
+  --color-button-secondary-hover-text: #{$link-color};
+
+  --color-button-primary-background: #{$color-button-primary-background};
+  --color-button-primary-hover-background: #{$color-button-primary-hover-background};
+  --color-button-primary-text: #{$color-button-primary-text};
+  --color-button-primary-hover-text: #{$color-button-primary-hover-text};
+
   --color-field-background: #{$white};
   --color-field-border: #{$gray-200};
   --color-field-text: #{$gray-800};
@@ -49,7 +67,7 @@ $spacing-submit-content: 10px 20px;
   --color-link-primary: #{$link-color};
   --color-message-error: #{$color-message-error};
   --color-message-warning: #{$color-message-warning};
-  --color-page-background: #{lighten($gray-100, 3%)};
+  --color-page-background: #{$color-page-background};
   --color-page-text: #{$gray-800};
 
   --border-radius-form: #{$border-radius-form};
@@ -69,10 +87,16 @@ $spacing-submit-content: 10px 20px;
   --spacing-submit-content: #{$spacing-submit-content};
 
   @media (prefers-color-scheme: dark) {
-    --color-button-secondary-background: #{$dark-color-button-secondary-background};
-    --color-button-secondary-text: #{$dark-color-button-secondary-text};
     --color-button-primary-background: #{$dark-color-button-primary-background};
+    --color-button-primary-hover-background: #{$dark-color-button-primary-hover-background};
     --color-button-primary-text: #{$dark-color-button-primary-text};
+    --color-button-primary-hover-text: #{$dark-color-button-primary-hover-text};
+
+    --color-button-secondary-background: transparent;
+    --color-button-secondary-hover-background: #{$dark-color-button-secondary-hover-background};
+    --color-button-secondary-text: #{$dark-color-button-secondary-text};
+    --color-button-secondary-hover-text: #{$dark-color-button-secondary-hover-text};
+
     --color-field-background: #{$dark-color-field-background};
     --color-field-border: #{$dark-color-field-border};
     --color-field-text: #{$dark-color-field-text};
