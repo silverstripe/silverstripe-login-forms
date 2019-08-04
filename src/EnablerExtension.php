@@ -2,6 +2,7 @@
 
 namespace SilverStripe\LoginForms;
 
+use Requirements;
 use SSViewer;
 use Extension;
 use Security;
@@ -42,6 +43,7 @@ class EnablerExtension extends Extension
         $themeActions = array_diff($allowedActions, $excludedActions);
         if (in_array($action, $themeActions)) {
             SSViewer::set_theme('login-forms');
+            Requirements::block(FRAMEWORK_ADMIN_DIR . '/css/screen.css');
         }
     }
 }
