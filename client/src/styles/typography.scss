@@ -11,10 +11,12 @@ a {
   text-decoration: none;
 
   &:hover {
+    color: var(--color-link-primary);
     text-decoration: underline;
   }
 
-  &.link--secondary {
+  &.link--secondary,
+  &.link--secondary:hover {
     color: var(--color-form-text);
   }
 }
