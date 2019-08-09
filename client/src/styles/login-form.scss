@@ -22,7 +22,8 @@ html {
 
   // Note: nested for specificity priority against silverstripe/admin styles
   .login-form-control--text .login-form-control__field,
-  input.text {
+  input.text,
+  input.text:focus {
     background-color: var(--color-field-background);
     border: 1px solid var(--color-field-border);
     border-radius: var(--border-radius-field);
