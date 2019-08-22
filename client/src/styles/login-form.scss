@@ -22,7 +22,8 @@ html {
 
   // Note: nested for specificity priority against silverstripe/admin styles
   .login-form-control--text .login-form-control__field,
-  input.text {
+  input.text,
+  input.text:focus {
     background-color: var(--color-field-background);
     border: 1px solid var(--color-field-border);
     border-radius: var(--border-radius-field);
@@ -95,11 +96,83 @@ fieldset {
 .btn {
   border-radius: var(--border-radius-field);
   padding: var(--spacing-submit-content);
+
+  &.disabled,
+  &.readonly,
+  &:disabled,
+  &[readonly] {
+    cursor: not-allowed;
+  }
 }
 
 .btn-success,
+.btn-primary,
 input[type="submit"] {
   background-color: var(--color-button-primary-background);
   color: var(--color-button-primary-text);
   border: 0;
+
+  // Disabled styles
+  &.disabled,
+  &.readonly,
+  &:disabled,
+  &[readonly] {
+    &,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active,
+    &:hover {
+      border-color: var(--color-button-primary-hover-background);
+      background-color: var(--color-button-primary-hover-background);
+      color: var(--color-button-primary-hover-text);
+    }
+  }
+
+  &:not(:disabled):not(.disabled) {
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: var(--color-button-primary-hover-background);
+      border-color: var(--color-button-primary-hover-background);
+      color: var(--color-button-primary-hover-text);
+    }
+  }
+}
+
+.btn-secondary {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--color-button-secondary-text);
+
+  // Disabled styles
+  &.disabled,
+  &.readonly,
+  &:disabled,
+  &[readonly] {
+    &,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active,
+    &:hover {
+      border-color: transparent;
+      background-color: transparent;
+      color: var(--color-button-secondary-hover-text);
+    }
+  }
+
+  &:not(:disabled):not(.disabled) {
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: var(--color-button-secondary-hover-background);
+      border-color: var(--color-button-secondary-hover-background);
+      color: var(--color-button-secondary-hover-text);
+    }
+  }
 }
