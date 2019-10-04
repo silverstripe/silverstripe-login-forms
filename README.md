@@ -24,6 +24,7 @@ as multi-factor authentication through [silverstripe/mfa](https://github.com/sil
 ### Installation
 
 Install the package via composer.
+
 ```
 composer require silverstripe/login-forms
 ```
@@ -47,7 +48,7 @@ and add your own logo. Example:
     <img src="logo.png" alt="My Brand" />
 </div>
 ```
- 
+
 ### Replacing templates
 
 In the unlikely case that you want to re-introduce some customisations
@@ -67,6 +68,20 @@ SilverStripe\LoginForms\EnablerExtension:
 
 Caution: Replacing the `Security.ss` template is not recommended,
 since it might change in the future.
+
+### Troubleshooting
+
+This module customises the default log in flow. This in turn uses the `PageController` class by default as the controller to render the form (if it exists). If your project uses the `PageController` class and makes `Requirements::themedJavscript` or `Requirements::themedJavscript` calls from the `init` method, it is possible that an error could occur due to the alteration of the `themes` configuration for the site.
+
+```
+[Emergency] Uncaught InvalidArgumentException: The javascript file doesn't exist. Please check if the file sometheme/js/alert.js exists in any context or search for themedJavascript references calling this file in your templates.
+```
+
+The override of the themes list by this module is made in order to prevent page styles and javascript from interfering with the presentation of the log in form. There are a number of ways in which to resolve the issue with themed requirements:
+
+1. Add your theme to the new themes list via `SilverStripe\LoginForms\EnablerExtension.login_themes` and test to ensure that there is no adverse affect to the log in flow
+2. Shift the required files into the project (as opposed to a theme) and use e.g. `Requirements::javascript` instead of `Requirements::themedJavascript`
+3. Copy the `Security.ss` template from the module into your project and add `<% require block() %>` to it (referencing the afflicted file). This will have to be done for each troublesome requriement file.
 
 ## Contributing
 
