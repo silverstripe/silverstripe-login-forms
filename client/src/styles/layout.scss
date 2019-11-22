@@ -11,7 +11,7 @@ body {
 body {
   display: grid;
   grid-template-columns: 1fr minmax(320px, max-content) 1fr;
-  grid-template-rows: 1fr calc(var(--sizing-app-brand-height) + (var(--spacing-app-brand) * 2)) auto 80px 1fr;
+  grid-template-rows: 1fr auto auto 80px 1fr;
   height: 100vh;
 }
 
