@@ -7,11 +7,16 @@
   &__link:hover {
     color: var(--color-page-text);
     text-decoration: none;
+    display: inline-block;
   }
 
   &__logo {
     max-width: var(--sizing-app-brand-max-width);
     max-height: var(--sizing-app-brand-max-height);
+
+    &[src*=".svg"] {
+      width: 100%;
+    }
   }
 
   &__name {
