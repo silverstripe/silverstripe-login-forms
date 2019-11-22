@@ -9,6 +9,11 @@
     text-decoration: none;
   }
 
+  &__logo {
+    max-width: var(--sizing-app-brand-max-width);
+    max-height: var(--sizing-app-brand-max-height);
+  }
+
   &__name {
     margin: 0;
   }
