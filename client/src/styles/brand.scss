@@ -9,6 +9,15 @@
     text-decoration: none;
   }
 
+  &__logo {
+    max-width: var(--sizing-app-brand-max-width);
+    max-height: var(--sizing-app-brand-max-height);
+
+    &[src*=".svg"] {
+      width: 100%;
+    }
+  }
+
   &__name {
     margin: 0;
   }

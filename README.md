@@ -43,9 +43,7 @@ Define an `app/templates/Includes/AppBrand.ss` template
 and add your own logo. Example:
 
 ```html
-<div class="app-brand__logo">
-    <img src="logo.png" alt="My Brand" />
-</div>
+<img class="app-brand__logo" src="logo.png" alt="$SiteConfig.Title" />
 ```
  
 ### Replacing templates

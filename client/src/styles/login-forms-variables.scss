@@ -36,7 +36,8 @@ $border-radius-form: 4px;
 $border-radius-field: 3px;
 $box-shadow-form: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 
-$sizing-app-brand-height: 40px;
+$sizing-app-brand-max-height: 150px;
+$sizing-app-brand-max-width: 300px;
 $sizing-content-width: 330px;
 
 $spacing-app-brand: 30px;
@@ -74,7 +75,8 @@ $spacing-submit-content: 10px 20px;
   --border-radius-field: #{$border-radius-field};
   --box-shadow-form: #{$box-shadow-form};
 
-  --sizing-app-brand-height: #{$sizing-app-brand-height};
+  --sizing-app-brand-max-height: #{$sizing-app-brand-max-height};
+  --sizing-app-brand-max-width: #{$sizing-app-brand-max-width};
   --sizing-content-width: #{$sizing-content-width};
 
   --spacing-app-brand: #{$spacing-app-brand};
