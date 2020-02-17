@@ -45,7 +45,7 @@ and add your own logo. Example:
 ```html
 <img class="app-brand__logo" src="logo.png" alt="$SiteConfig.Title" />
 ```
- 
+
 ### Replacing templates
 
 In the unlikely case that you want to re-introduce some customisations
@@ -65,6 +65,14 @@ SilverStripe\LoginForms\EnablerExtension:
 
 Caution: Replacing the `Security.ss` template is not recommended,
 since it might change in the future.
+
+### Dark mode ###
+
+The login form includes a dark mode by default for users who prefer it. However, if your site is not designed for dark mode yet, you can disable this functionality by blocking the stylesheet in `_config.php`:
+
+```php
+Requirements::block("silverstripe/login-forms: client/dist/styles/darkmode.css");
+```
 
 ## Contributing
 

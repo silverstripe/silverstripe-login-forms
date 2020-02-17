@@ -20,6 +20,7 @@ const config = [
     name: 'css',
     entry: {
       bundle: `${PATHS.SRC}/styles/bundle.scss`,
+      darkmode: `${PATHS.SRC}/styles/dark-mode.scss`
     },
     output: {
       path: PATHS.DIST,
