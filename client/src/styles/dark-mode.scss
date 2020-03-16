@@ -1,0 +1,57 @@
+@import "variables"; // from silverstripe/admin
+@import "login-forms-variables";
+
+:root {
+  @media (prefers-color-scheme: dark) {
+    --color-button-primary-background: #{$dark-color-button-primary-background};
+    --color-button-primary-hover-background: #{$dark-color-button-primary-hover-background};
+    --color-button-primary-text: #{$dark-color-button-primary-text};
+    --color-button-primary-hover-text: #{$dark-color-button-primary-hover-text};
+
+    --color-button-secondary-background: transparent;
+    --color-button-secondary-hover-background: #{$dark-color-button-secondary-hover-background};
+    --color-button-secondary-text: #{$dark-color-button-secondary-text};
+    --color-button-secondary-hover-text: #{$dark-color-button-secondary-hover-text};
+
+    --color-field-background: #{$dark-color-field-background};
+    --color-field-border: #{$dark-color-field-border};
+    --color-field-text: #{$dark-color-field-text};
+    --color-form-background: #{$dark-color-form-background};
+    --color-form-text: #{$dark-color-form-text};
+    --color-link-primary: #{$dark-color-link-primary};
+    --color-message-error: #{$dark-color-message-error};
+    --color-message-warning: #{$dark-color-message-warning};
+    --color-page-background: #{$dark-color-page-background};
+    --color-page-text: #{$dark-color-page-text};
+  }
+}
+
+.app-brand {
+  // Helper classes for Dark Mode support on image-based logos
+  &__logo--dark-mode {
+    display: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    &__logo--light-mode {
+      display: none;
+    }
+
+    &__logo--dark-mode {
+      display: block;
+    }
+  }
+}
+
+.silverstripe-brand {
+  .silverstripe-cms-logo {
+    @media (prefers-color-scheme: dark) {
+      .text {
+        fill: #FFFFFF;
+      }
+
+      .glyph {
+        fill: #44C8F5;
+      }
+    }
+  }
+}
