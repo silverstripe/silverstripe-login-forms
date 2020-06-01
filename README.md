@@ -1,4 +1,4 @@
-# SilverStripe Login Forms
+# Silverstripe Login Forms
 
 [![Build Status](https://api.travis-ci.org/silverstripe/silverstripe-login-forms.svg?branch=master)](https://travis-ci.org/silverstripe/silverstripe-login-forms)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/silverstripe/silverstripe-login-forms/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/silverstripe/silverstripe-login-forms/?branch=master)
@@ -7,12 +7,12 @@
 
 ## Overview
 
-The [SilverStripe Login Forms module](https://github.com/silverstripe/silverstripe-login-forms) provides templates for the login screen.
+The [Silverstripe Login Forms module](https://github.com/silverstripe/silverstripe-login-forms) provides templates for the login screen.
 
-SilverStripe defaults to using the standard `Page.ss` template for login forms,
+Silverstripe CMS defaults to using the standard `Page.ss` template for login forms,
 and is usually customised through the `Layout/Security.ss` template.
 This module overrides any template or theme inheritance,
-and uses it's own `Security.ss` template, in order to provide consistent
+and uses its own `Security.ss` template, in order to provide consistent
 styling and behaviour that's independent from the specifics in your project.
 This enables more sophisticated login styling, such
 as multi-factor authentication through [silverstripe/mfa](https://github.com/silverstripe/silverstripe-mfa).
@@ -68,7 +68,9 @@ since it might change in the future.
 
 ### Dark mode ###
 
-The login form includes a dark mode by default for users who prefer it. However, if your site is not designed for dark mode yet, you can disable this functionality by blocking the stylesheet in `_config.php`:
+The login form includes a dark mode by default for users who prefer it. However,
+if your site is not designed for dark mode yet, you can disable this
+functionality by blocking the stylesheet in `_config.php`:
 
 ```php
 Requirements::block("silverstripe/login-forms: client/dist/styles/darkmode.css");
@@ -76,9 +78,12 @@ Requirements::block("silverstripe/login-forms: client/dist/styles/darkmode.css")
 
 ## Contributing
 
-Contributions are welcome! Create an issue, explaining a bug or propose development ideas. Find more information on
-[contributing](https://docs.silverstripe.org/en/contributing/) in the SilverStripe developer documentation.
+Contributions are welcome! Create an issue, explaining a bug or propose development
+ideas. Find more information on
+[contributing](https://docs.silverstripe.org/en/contributing/) in the
+Silverstripe CMS developer documentation.
 
 ## Reporting Issues
 
-Please [create an issue](https://github.com/silverstripe/silverstripe-login-forms/issues) for any bugs you've found, or features you're missing.
+Please [create an issue](https://github.com/silverstripe/silverstripe-login-forms/issues/new)
+for any bugs you've found, or features you're missing.
