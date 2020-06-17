@@ -1,0 +1,3 @@
+fi_FI:
+  SilverStripe\LoginForms:
+    LOGIN: 'Kirjaudu sisään'

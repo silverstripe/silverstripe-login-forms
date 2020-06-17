@@ -1,0 +1,3 @@
+pl:
+  SilverStripe\LoginForms:
+    LOGIN: 'Zaloguj się'
