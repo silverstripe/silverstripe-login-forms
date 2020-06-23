@@ -6,20 +6,16 @@ services:
   - mysql
   - postgresql
 
-env:
-  global:
-    - TRAVIS_NODE_VERSION="10"
-
 matrix:
   include:
     - php: 7.1
-      env: DB=MYSQL RECIPE_VERSION="4.5.x-dev" PHPUNIT_TEST=1
+      env: DB=MYSQL RECIPE_VERSION="4.5.x-dev" PHPUNIT_TEST=1 PHPCS_TEST=1 PDO=1
     - php: 7.2
-      env: DB=PGSQL RECIPE_VERSION="4.5.x-dev" PHPUNIT_TEST=1
+      env: DB=PGSQL RECIPE_VERSION="4.6.x-dev" PHPUNIT_COVERAGE_TEST=1
     - php: 7.3
-      env: DB=MYSQL RECIPE_VERSION="4.6.x-dev" PHPUNIT_TEST=1 PHPCS_TEST=1
+      env: DB=MYSQL RECIPE_VERSION="4.6.x-dev" PHPUNIT_TEST=1
     - php: 7.4
-      env: DB=MYSQL RECIPE_VERSION="4.x-dev" PHPUNIT_TEST=1 PHPUNIT_COVERAGE_TEST=1
+      env: DB=MYSQL RECIPE_VERSION="4.x-dev" PHPUNIT_TEST=1 
 
 before_script:
   # Init PHP
@@ -31,7 +27,9 @@ before_script:
   # Install composer
   - composer validate
   - if [[ $DB == PGSQL ]]; then composer require --prefer-dist --no-update silverstripe/postgresql:^2; fi
-  - composer require silverstripe/recipe-cms "$RECIPE_VERSION" --no-update
+  - composer require silverstripe/recipe-cms:$RECIPE_VERSION --no-update
+  # Fix for running phpunit 5 on php 7.4+
+  - composer require --no-update sminnee/phpunit-mock-objects:^3
   - composer install --prefer-dist --no-interaction --no-progress --no-suggest --optimize-autoloader --verbose --profile
 
 script:
