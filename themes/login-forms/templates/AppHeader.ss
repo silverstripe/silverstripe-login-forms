@@ -1,8 +1,8 @@
 <header class="app-brand">
     <a
         class="app-brand__link"
-        href="/"
-        title="Go back to homepage of <% if not $SiteConfig.Title %>$SiteConfig.Title<% else %>site<% end_if %>"
+        href="{$AbsoluteBaseURL}"
+        title="Go back to homepage of <% if $SiteConfig.Title %>$SiteConfig.Title<% else %>site<% end_if %>"
     >
         <% include AppBrand %>
 
