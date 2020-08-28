@@ -41,4 +41,14 @@ class EnablerExtensionTest extends FunctionalTest
         $this->get('Security/index');
         $this->assertNotContains('silverstripe/login-forms:login-forms', SSViewer::get_themes());
     }
+
+    public function testSecurityPageClassConfig()
+    {
+        // default value
+        $this->assertSame('Page', Config::inst()->get(Security::class, 'page_class'));
+        // will be set to null during call to Security/index in EnableExtension::beforeCallActionHandler()
+        $this->get('Security/index');
+        // set back to default value in EnableExtension::afterCallActionHandler()
+        $this->assertSame('Page', Config::inst()->get(Security::class, 'page_class'));
+    }
 }

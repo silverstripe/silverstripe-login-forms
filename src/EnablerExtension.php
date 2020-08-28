@@ -37,6 +37,20 @@ class EnablerExtension extends Extension
         'ping',
     ];
 
+    /**
+     * Used to store the value of Security.page_class so that we can temporarily disable it
+     * so that Security is used as the Controller instead of Page_Controller
+     * This is done so that Page_Controller::init() is not called which may included calls
+     * to Requirements::javascript(), Requirements::css(), etc
+     * The styling and javascript on login-forms module should be completely isolated from the
+     * regular website
+     *
+     * @var string
+     *
+     * @see Security::getResponseController()
+     */
+    private $defaultPageClass = '';
+
     public function beforeCallActionHandler()
     {
         $config = Config::inst();
@@ -49,5 +63,12 @@ class EnablerExtension extends Extension
         if (in_array($action, $themeActions)) {
             SSViewer::set_themes($config->get(self::class, 'login_themes'));
         }
+        $this->defaultPageClass = $config->get(Security::class, 'page_class');
+        Config::modify()->remove(Security::class, 'page_class');
+    }
+
+    public function afterCallActionHandler()
+    {
+        Config::inst()->set(Security::class, 'page_class', $this->defaultPageClass);
     }
 }
