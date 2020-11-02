@@ -1,3 +1,6 @@
 en:
   SilverStripe\LoginForms:
+    BackToHomePage: 'Go back to homepage'
     LOGIN: 'Log in'
+    SilverstripeDesc: 'Logo of Silverstripe CMS'
+    SilverstripeTitle: Silverstripe

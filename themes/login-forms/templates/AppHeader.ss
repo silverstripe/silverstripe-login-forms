@@ -1,8 +1,8 @@
 <header class="app-brand">
     <a
         class="app-brand__link"
-        href="{$AbsoluteBaseURL}"
-        title="Go back to homepage of <% if $SiteConfig.Title %>$SiteConfig.Title<% else %>site<% end_if %>"
+        href="$AbsoluteBaseURL"
+        title="<%t SilverStripe\LoginForms.BackToHomePage "Go back to homepage" %>"
     >
         <% include AppBrand %>
 
