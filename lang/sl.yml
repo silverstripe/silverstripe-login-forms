@@ -1,0 +1,6 @@
+sl:
+  SilverStripe\LoginForms:
+    BackToHomePage: 'Nazaj na vstopno stran'
+    LOGIN: Prijava
+    SilverstripeDesc: 'Logotip Silvestripe CMS'
+    SilverstripeTitle: Silverstripe
