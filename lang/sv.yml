@@ -1,3 +1,6 @@
 sv:
   SilverStripe\LoginForms:
+    BackToHomePage: ''
     LOGIN: 'Logga in'
+    SilverstripeDesc: ''
+    SilverstripeTitle: ''

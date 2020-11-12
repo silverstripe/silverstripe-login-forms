@@ -1,3 +1,6 @@
 pl:
   SilverStripe\LoginForms:
+    BackToHomePage: ''
     LOGIN: 'Zaloguj się'
+    SilverstripeDesc: ''
+    SilverstripeTitle: ''

@@ -1,3 +1,6 @@
 nl:
   SilverStripe\LoginForms:
+    BackToHomePage: ''
     LOGIN: Inloggen
+    SilverstripeDesc: ''
+    SilverstripeTitle: ''
