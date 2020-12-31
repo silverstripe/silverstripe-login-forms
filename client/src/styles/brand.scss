@@ -3,6 +3,10 @@
   justify-content: center;
   padding: var(--spacing-app-brand);
 
+  @media (min-width: 420px) {
+    max-width: var(--sizing-form-desktop-width);
+  }
+
   &__link,
   &__link:hover {
     color: var(--color-page-text);

@@ -18,6 +18,7 @@ html {
     border-radius: var(--border-radius-form);
     padding: var(--spacing-form-desktop);
     width: auto;
+    max-width: var(--sizing-form-desktop-width);
   }
 
   // Note: nested for specificity priority against silverstripe/admin styles
