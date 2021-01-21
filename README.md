@@ -1,6 +1,6 @@
 # Silverstripe Login Forms
 
-[![Build Status](https://api.travis-ci.org/silverstripe/silverstripe-login-forms.svg?branch=master)](https://travis-ci.org/silverstripe/silverstripe-login-forms)
+[![Build Status](https://api.travis-ci.com/silverstripe/silverstripe-login-forms.svg?branch=4)](https://travis-ci.com/silverstripe/silverstripe-login-forms)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/silverstripe/silverstripe-login-forms/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/silverstripe/silverstripe-login-forms/?branch=master)
 [![codecov](https://codecov.io/gh/silverstripe/silverstripe-login-forms/branch/master/graph/badge.svg)](https://codecov.io/gh/silverstripe/silverstripe-login-forms)
 [![SilverStripe supported module](https://img.shields.io/badge/silverstripe-supported-0071C4.svg)](https://www.silverstripe.org/software/addons/silverstripe-commercially-supported-module-list/)
