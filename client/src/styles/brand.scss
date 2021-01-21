@@ -3,10 +3,6 @@
   justify-content: center;
   padding: var(--spacing-app-brand);
 
-  @media (min-width: 420px) {
-    max-width: var(--sizing-form-desktop-width);
-  }
-
   &__link,
   &__link:hover {
     color: var(--color-page-text);
@@ -24,6 +20,7 @@
 
   &__name {
     margin: 0;
+    text-align: center;
   }
 
   &__logo + &__name {
@@ -33,9 +30,7 @@
 
 .silverstripe-brand {
   color: var(--color-page-text);
-  display: flex;
-  justify-content: center;
-  padding: var(--spacing-silverstripe-brand);
+  margin-top: var(--spacing-silverstripe-brand);
 
   .silverstripe-cms-logo {
     .text {
