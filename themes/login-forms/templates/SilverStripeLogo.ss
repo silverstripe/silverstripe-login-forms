@@ -1,4 +1,4 @@
-<svg class="silverstripe-cms-logo" viewBox="0 0 1961.78 289.12" height="25px" xmlns="http://www.w3.org/2000/svg" aria-labelledby="silverstripeTitle silverstripeDesc">
+<svg class="silverstripe-cms-logo" viewBox="0 0 1970 289.12" height="25px" xmlns="http://www.w3.org/2000/svg" aria-labelledby="silverstripeTitle silverstripeDesc">
     <title id="silverstripeTitle"><%t SilverStripe\LoginForms.SilverstripeTitle "Silverstripe CMS" %></title>
     <desc id="silverstripeDesc"><%t SilverStripe\LoginForms.SilverstripeDesc "Logo of Silverstripe CMS" %></desc>
     <g class="text">
