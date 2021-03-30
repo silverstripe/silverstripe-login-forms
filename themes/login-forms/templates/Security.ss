@@ -16,9 +16,16 @@
         <% include AppHeader %>
 
         <main class="login-form">
+            <div class="login-form__header">
             <% if $Title %>
                 <h2 class="login-form__title">$Title</h2>
             <% end_if %>
+                <h2>
+                    <a target="_blank" href="https://userhelp.silverstripe.org/en/4/managing_your_website/logging_in/">
+                        <span class="font-icon-help-circled"></span>
+                    </a>
+                </h2>
+            </div>
 
             <% if $Message %>
                 <p class="login-form__message

@@ -37,6 +37,21 @@ html {
   }
 }
 
+.login-form__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    font-size: $h2-font-size;
+    color: white;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 .login-form__title {
   margin-top: 0;
 }
