@@ -43,12 +43,7 @@ html {
   justify-content: space-between;
 
   a {
-    font-size: $h2-font-size;
-    color: white;
-
-    &:hover {
-      text-decoration: none;
-    }
+    margin-bottom: 11px;
   }
 }
 
@@ -189,5 +184,14 @@ input[type="submit"] {
       border-color: var(--color-button-secondary-hover-background);
       color: var(--color-button-secondary-hover-text);
     }
+  }
+}
+
+.field {
+  .font-icon-help-circled {
+    margin-left: 5px;
+    font-size: 16px;
+    color: var(--color-link-primary);
+    vertical-align: middle;
   }
 }

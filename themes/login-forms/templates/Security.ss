@@ -11,6 +11,11 @@
         <meta name="color-scheme" content="light dark" />
         <% require css("silverstripe/admin: client/dist/styles/bundle.css") %>
         <% require css("silverstripe/login-forms: client/dist/styles/bundle.css") %>
+        <% require javascript('silverstripe/admin: thirdparty/jquery/jquery.js') %>
+        <% require javascript('silverstripe/admin: thirdparty/popper/popper.min.js') %>
+        <% require javascript('silverstripe/admin: thirdparty/bootstrap/js/dist/util.js') %>
+        <% require javascript('silverstripe/admin: thirdparty/bootstrap/js/dist/tooltip.js') %>
+        <% require customScript("window.jQuery('body').tooltip({ selector: '[data-toggle=tooltip]' });", 'bootstrap.tooltip-boot') %>
     </head>
     <body>
         <% include AppHeader %>
@@ -20,11 +25,9 @@
             <% if $Title %>
                 <h2 class="login-form__title">$Title</h2>
             <% end_if %>
-                <h2>
-                    <a target="_blank" href="https://userhelp.silverstripe.org/en/4/managing_your_website/logging_in/">
-                        <span class="font-icon-help-circled"></span>
-                    </a>
-                </h2>
+                <a target="_blank" href="https://userhelp.silverstripe.org/en/4/managing_your_website/logging_in/">
+                    <%t SilverStripe\LoginForms\NEED_HELP 'Need help?' %>
+                </a>
             </div>
 
             <% if $Message %>
