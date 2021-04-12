@@ -187,11 +187,18 @@ input[type="submit"] {
   }
 }
 
+input[type="checkbox"] {
+  position: relative;
+  top: 2px;
+}
+
 .field {
   .font-icon-help-circled {
     margin-left: 5px;
     font-size: 16px;
     color: var(--color-link-primary);
     vertical-align: middle;
+    position: relative;
+    top: 1px;
   }
 }
