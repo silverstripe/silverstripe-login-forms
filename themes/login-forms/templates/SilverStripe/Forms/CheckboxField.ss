@@ -1,1 +1,1 @@
-<input $AttributesHTML('title', 'data-toggle') />
+<input $getAttributesHTML('title', 'data-toggle') />
