@@ -11,11 +11,7 @@
         <meta name="color-scheme" content="light dark" />
         <% require css("silverstripe/admin: client/dist/styles/bundle.css") %>
         <% require css("silverstripe/login-forms: client/dist/styles/bundle.css") %>
-        <% require javascript('silverstripe/admin: thirdparty/jquery/jquery.js') %>
-        <% require javascript('silverstripe/admin: thirdparty/popper/popper.min.js') %>
-        <% require javascript('silverstripe/admin: thirdparty/bootstrap/js/dist/util.js') %>
-        <% require javascript('silverstripe/admin: thirdparty/bootstrap/js/dist/tooltip.js') %>
-        <% require customScript("window.jQuery('body').tooltip({ selector: '[data-toggle=tooltip]' });", 'bootstrap.tooltip-boot') %>
+        <% require javascript("silverstripe/login-forms: client/dist/js/bundle.js") %>
     </head>
     <body>
         <% include AppHeader %>
