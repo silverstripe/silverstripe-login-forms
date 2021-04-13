@@ -4,6 +4,7 @@
   "description": "A collection of templates for the CMS login screens",
   "scripts": {
     "build": "yarn && yarn lint && NODE_ENV=production webpack -p --bail --progress",
+    "dev": "NODE_ENV=development webpack --progress",
     "watch": "yarn && NODE_ENV=development webpack --watch --progress",
     "css": "WEBPACK_CHILD=css npm run build",
     "lint": "sass-lint -v"
@@ -18,8 +19,14 @@
     "url": "https://github.com/silverstripe/login-forms/issues"
   },
   "homepage": "https://github.com/silverstripe/login-forms#readme",
+  "dependencies": {
+    "bootstrap": "4.6.0",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1"
+  },
   "devDependencies": {
-    "@silverstripe/webpack-config": "^1.1.0",
+    "@silverstripe/eslint-config": "^0.0.5",
+    "@silverstripe/webpack-config": "^1.7.0",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.6.0",
@@ -36,10 +43,5 @@
   },
   "engines": {
     "node": "^10.x"
-  },
-  "dependencies": {
-    "bootstrap": "4.6.0",
-    "jquery": "^3.6.0",
-    "popper.js": "^1.16.1"
   }
 }
