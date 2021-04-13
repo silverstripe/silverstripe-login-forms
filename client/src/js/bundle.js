@@ -1,4 +1,5 @@
+import jQuery from 'jquery';
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/tooltip';
 
-window.jQuery('body').tooltip({selector: '[data-toggle=tooltip]'});
+jQuery('body').tooltip({ selector: '[data-toggle=tooltip]' });
