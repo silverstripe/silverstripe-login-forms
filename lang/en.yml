@@ -1,3 +1,4 @@
 en:
   SilverStripe\LoginForms:
     LOGIN: 'Log in'
+    NEED_HELP: 'Need help?'

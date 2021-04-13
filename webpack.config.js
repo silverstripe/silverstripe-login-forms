@@ -2,8 +2,12 @@ const Path = require('path');
 // Import the core config
 const webpackConfig = require('@silverstripe/webpack-config');
 const {
+  resolveJS,
+  externalJS,
   moduleCSS,
   pluginCSS,
+  moduleJS,
+  pluginJS,
 } = webpackConfig;
 
 const ENV = process.env.NODE_ENV;
@@ -14,6 +18,8 @@ const PATHS = {
   SRC: Path.resolve('client/src'),
   DIST: Path.resolve('client/dist'),
 };
+
+const externals = externalJS(ENV, PATHS);
 
 const config = [
   {
@@ -28,6 +34,21 @@ const config = [
     devtool: (ENV !== 'production') ? 'source-map' : '',
     module: moduleCSS(ENV, PATHS),
     plugins: pluginCSS(ENV, PATHS),
+  },
+  {
+    name: 'js',
+    entry: {
+      bundle: `${PATHS.SRC}/js/bundle.js`,
+    },
+    output: {
+      path: PATHS.DIST,
+      filename: 'js/[name].js',
+    },
+    devtool: (ENV !== 'production') ? 'source-map' : '',
+    resolve: resolveJS(ENV, PATHS),
+    externals,
+    module: moduleJS(ENV, PATHS),
+    plugins: pluginJS(ENV, PATHS),
   },
 ];
 
