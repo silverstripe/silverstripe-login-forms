@@ -37,6 +37,16 @@ html {
   }
 }
 
+.login-form__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    margin-bottom: 11px;
+  }
+}
+
 .login-form__title {
   margin-top: 0;
 }
@@ -174,5 +184,21 @@ input[type="submit"] {
       border-color: var(--color-button-secondary-hover-background);
       color: var(--color-button-secondary-hover-text);
     }
+  }
+}
+
+input[type="checkbox"] {
+  position: relative;
+  top: 2px;
+}
+
+.field {
+  .font-icon-help-circled {
+    margin-left: 5px;
+    font-size: 16px;
+    color: var(--color-link-primary);
+    vertical-align: middle;
+    position: relative;
+    top: 1px;
   }
 }
