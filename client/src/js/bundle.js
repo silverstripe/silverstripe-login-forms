@@ -1,5 +1,4 @@
 import jQuery from 'jquery';
-import 'bootstrap/js/dist/util';
-import 'bootstrap/js/dist/tooltip';
+import 'bootstrap/js/dist/popover';
 
-jQuery('body').tooltip({ selector: '[data-toggle=tooltip]' });
+jQuery('[data-toggle="popover"]').popover();
