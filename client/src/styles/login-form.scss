@@ -76,6 +76,10 @@ fieldset {
   padding: 0;
 }
 
+.login-form__help-icon {
+  cursor: pointer;
+}
+
 .login-form-control,
 .field {
   margin-bottom: var(--spacing-form-controls);
@@ -201,4 +205,9 @@ input[type="checkbox"] {
     position: relative;
     top: 1px;
   }
+}
+
+.popover .popover-header + .popover-body {
+  padding: 12px 15px;
+  font-size: 13px;
 }
