@@ -22,9 +22,6 @@
             <% if $Title %>
                 <h2 class="login-form__title">$Title</h2>
             <% end_if %>
-                <a target="_blank" href="https://userhelp.silverstripe.org/en/4/managing_your_website/logging_in/">
-                    <%t SilverStripe\LoginForms\NEED_HELP 'Need help?' %>
-                </a>
             </div>
 
             <% if $Message %>
