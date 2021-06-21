@@ -207,7 +207,23 @@ input[type="checkbox"] {
   }
 }
 
-.popover .popover-header + .popover-body {
-  padding: 12px 15px;
-  font-size: 13px;
+.popover {
+  background-color: var(--color-form-background);
+  border-color: var(--color-field-border);
+
+  &.bs-popover-auto[x-placement^="top"] > .arrow::before,
+  &.bs-popover-top > .arrow::before {
+    border-top-color: var(--color-field-border);
+  }
+
+  &.bs-popover-auto[x-placement^="top"] > .arrow::after,
+  &.bs-popover-top > .arrow::after {
+    border-top-color: var(--color-form-background);
+  }
+
+  .popover-header + .popover-body {
+    color: var(--color-form-text);
+    padding: 12px 15px;
+    font-size: 13px;
+  }
 }
