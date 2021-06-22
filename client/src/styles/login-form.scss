@@ -211,14 +211,19 @@ input[type="checkbox"] {
   background-color: var(--color-form-background);
   border-color: var(--color-field-border);
 
-  &.bs-popover-auto[x-placement^="top"] > .arrow::before,
-  &.bs-popover-top > .arrow::before {
-    border-top-color: var(--color-field-border);
-  }
+  // Style the notch on the popup bottle for each possible position
+  $positions: top, bottom, left, right;
+  @each $pos in $positions {
+    &.bs-popover-auto[x-placement^="#{$pos}"],
+    &.bs-popover-#{$pos} {
+      & > .arrow::before {
+        border-#{$pos}-color: var(--color-field-border);
+      }
 
-  &.bs-popover-auto[x-placement^="top"] > .arrow::after,
-  &.bs-popover-top > .arrow::after {
-    border-top-color: var(--color-form-background);
+      & > .arrow::after {
+        border-#{$pos}-color: var(--color-form-background);
+      }
+    }
   }
 
   .popover-header + .popover-body {
