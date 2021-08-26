@@ -1,0 +1,6 @@
+fr:
+  SilverStripe\LoginForms:
+    BackToHomePage: 'Retourner à la page principale'
+    LOGIN: Connexion
+    SilverstripeDesc: 'Logo du CMS Silverstripe'
+    SilverstripeTitle: Silverstripe

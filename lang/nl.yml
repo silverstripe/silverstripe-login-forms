@@ -1,6 +1,6 @@
 nl:
   SilverStripe\LoginForms:
-    BackToHomePage: ''
+    BackToHomePage: 'Terug naar de website'
     LOGIN: Inloggen
-    SilverstripeDesc: ''
-    SilverstripeTitle: ''
+    SilverstripeDesc: 'Silverstripe logo'
+    SilverstripeTitle: Silverstipe
