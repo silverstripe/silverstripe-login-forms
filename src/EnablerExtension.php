@@ -76,8 +76,9 @@ class EnablerExtension extends Extension
     /**
      * Returns an RFC1766 compliant locale string, e.g. 'fr-CA'.
      *
-     * Note: Added to support front-end translations trough detection of the lang attribute on the html tag.
-     * Because the Security controller extends directly on Controller instead of ContentController we need to add this fallback method.
+     * Note: Added to support front-end translations trough detection of the lang attribute on
+     * the html tag. Because the Security controller extends directly on Controller instead of
+     * ContentController we need to add this fallback method.
      *
      * @return string
      */
