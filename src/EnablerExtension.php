@@ -6,6 +6,7 @@ use SilverStripe\View\SSViewer;
 use SilverStripe\Core\Extension;
 use SilverStripe\Security\Security;
 use SilverStripe\Core\Config\Config;
+use SilverStripe\i18n\i18n;
 
 /**
  * Applies to the {@see Security} controller in order to detect requests for actions related to
@@ -70,5 +71,20 @@ class EnablerExtension extends Extension
     public function afterCallActionHandler()
     {
         Config::inst()->set(Security::class, 'page_class', $this->defaultPageClass);
+    }
+    
+    /**
+     * Returns an RFC1766 compliant locale string, e.g. 'fr-CA'.
+     *
+     * Note: Added to support front-end translations trough detection of the lang attribute on
+     * the html tag. Because the Security controller extends directly on Controller instead of
+     * ContentController we need to add this fallback method.
+     *
+     * @return string
+     */
+    public function ContentLocale()
+    {
+        $locale = i18n::get_locale();
+        return i18n::convert_rfc1766($locale);
     }
 }
