@@ -2,7 +2,3 @@ version: ~> 1.0
 
 import:
   - silverstripe/silverstripe-travis-shared:config/provision/standard-jobs-fixed.yml
-
-env:
-  global:
-    - REQUIRE_RECIPE="4.x-dev"
