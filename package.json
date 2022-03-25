@@ -25,7 +25,7 @@
     "popper.js": "^1.16.1"
   },
   "devDependencies": {
-    "@silverstripe/eslint-config": "^0.0.5",
+    "@silverstripe/eslint-config": "^0.1.0",
     "@silverstripe/webpack-config": "^1.7.0",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
