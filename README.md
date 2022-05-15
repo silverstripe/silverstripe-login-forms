@@ -70,10 +70,11 @@ since it might change in the future.
 
 The login form includes a dark mode by default for users who prefer it. However,
 if your site is not designed for dark mode yet, you can disable this
-functionality by blocking the stylesheet in `_config.php`:
+functionality by disabling it in your yaml configuration:
 
-```php
-Requirements::block("silverstripe/login-forms: client/dist/styles/darkmode.css");
+```yml
+SilverStripe\Security\Security:
+  enable_dark_mode: false
 ```
 
 ## Contributing

@@ -8,13 +8,15 @@
             $Metatags.RAW
         <% end_if %>
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <meta name="color-scheme" content="light dark" />
+        <meta name="color-scheme" content="light <% if $darkModeIsEnabled() %>dark<% else %>only<% end_if %>" />
         <% require css("silverstripe/admin: client/dist/styles/bundle.css") %>
         <% require css("silverstripe/login-forms: client/dist/styles/bundle.css") %>
-        <% require css("silverstripe/login-forms: client/dist/styles/darkmode.css") %>
+        <% if $darkModeIsEnabled() %>
+            <% require css("silverstripe/login-forms: client/dist/styles/darkmode.css") %>
+        <% end_if %>
         <% require javascript("silverstripe/login-forms: client/dist/js/bundle.js") %>
     </head>
-    <body>
+    <body <% if $darkModeIsEnabled() %>class="dark-mode-enabled"<% end_if %>>
         <% include AppHeader %>
 
         <main class="login-form">
