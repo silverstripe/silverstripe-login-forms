@@ -38,6 +38,8 @@ class EnablerExtension extends Extension
         'ping',
     ];
 
+    private static bool $enable_dark_mode = true;
+
     /**
      * Used to store the value of Security.page_class so that we can temporarily disable it
      * so that Security is used as the Controller instead of Page_Controller
@@ -72,7 +74,7 @@ class EnablerExtension extends Extension
     {
         Config::inst()->set(Security::class, 'page_class', $this->defaultPageClass);
     }
-    
+
     /**
      * Returns an RFC1766 compliant locale string, e.g. 'fr-CA'.
      *
@@ -86,5 +88,10 @@ class EnablerExtension extends Extension
     {
         $locale = i18n::get_locale();
         return i18n::convert_rfc1766($locale);
+    }
+
+    public function darkModeIsEnabled()
+    {
+        return Security::config()->get('enable_dark_mode');
     }
 }
