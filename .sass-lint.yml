@@ -1,6 +1,6 @@
 # sass-lint config to match the AirBNB style guide
 files:
-  include: '**/client/src/**/*.scss'
+  include: 'client/src/**/*.scss'
 options:
   formatter: stylish
   merge-default-rules: false
