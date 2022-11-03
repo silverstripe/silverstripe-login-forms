@@ -216,11 +216,11 @@ input[type="checkbox"] {
   @each $pos in $positions {
     &.bs-popover-auto[x-placement^="#{$pos}"],
     &.bs-popover-#{$pos} {
-      & > .arrow::before {
+      & > .popover-arrow::before {
         border-#{$pos}-color: var(--color-field-border);
       }
 
-      & > .arrow::after {
+      & > .popover-arrow::after {
         border-#{$pos}-color: var(--color-form-background);
       }
     }
