@@ -1,56 +1,36 @@
 const Path = require('path');
-// Import the core config
-const webpackConfig = require('@silverstripe/webpack-config');
-
-const {
-  resolveJS,
-  // externalJS,
-  moduleCSS,
-  pluginCSS,
-  moduleJS,
-  pluginJS,
-} = webpackConfig;
+const { JavascriptWebpackConfig, CssWebpackConfig } = require('@silverstripe/webpack-config');
 
 const ENV = process.env.NODE_ENV;
 const PATHS = {
-  MODULES: 'node_modules',
-  FILES_PATH: '../',
   ROOT: Path.resolve(),
   SRC: Path.resolve('client/src'),
   DIST: Path.resolve('client/dist'),
 };
 
+// Main JS bundle
+const jsConfig = new JavascriptWebpackConfig('js', PATHS, 'silverstripe/login-forms')
+  .setEntry({
+    bundle: `${PATHS.SRC}/js/bundle.js`,
+  })
+  .getConfig();
+
+// This module isn't actually withing the CMS context, so it won't have access
+// to the externals
+delete jsConfig.externals;
+
 const config = [
-  {
-    name: 'css',
-    entry: {
+  jsConfig,
+  // sass to css
+  new CssWebpackConfig('css', PATHS)
+    .setEntry({
       bundle: `${PATHS.SRC}/styles/bundle.scss`,
       darkmode: `${PATHS.SRC}/styles/dark-mode.scss`
-    },
-    output: {
-      path: PATHS.DIST,
-      filename: 'styles/[name].css',
-    },
-    devtool: (ENV !== 'production') ? 'source-map' : '',
-    module: moduleCSS(ENV, PATHS),
-    plugins: pluginCSS(ENV, PATHS),
-  },
-  {
-    name: 'js',
-    entry: {
-      bundle: `${PATHS.SRC}/js/bundle.js`,
-    },
-    output: {
-      path: PATHS.DIST,
-      filename: 'js/[name].js',
-    },
-    devtool: (ENV !== 'production') ? 'source-map' : '',
-    resolve: resolveJS(ENV, PATHS),
-    // externals: externalJS(ENV, PATHS),
-    module: moduleJS(ENV, PATHS),
-    plugins: pluginJS(ENV, PATHS),
-  },
+    })
+    .getConfig(),
 ];
 
-module.exports = config;
-
+// Use WEBPACK_CHILD=js or WEBPACK_CHILD=css env var to run a single config
+module.exports = (process.env.WEBPACK_CHILD)
+  ? config.find((entry) => entry.name === process.env.WEBPACK_CHILD)
+  : config;
