@@ -17,16 +17,11 @@ as multi-factor authentication through [silverstripe/mfa](https://github.com/sil
 
 ![Login forms installed in the CMS](docs/en/_images/screenshot.png)
 
-## Requirements
+## Installation
 
-### Installation
-
-Install the package via composer.
-```
+```sh
 composer require silverstripe/login-forms
 ```
-
-The module is enabled by default.
 
 ## Usage
 
