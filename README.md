@@ -29,7 +29,7 @@ composer require silverstripe/login-forms
 
 Even though this template is generic, it's often a good idea
 to add your own logo in order to make your login forms
-more recogniseable for your users. This can also help
+more recognisable for your users. This can also help
 to prevent generic phishing attempts.
 
 Define an `app/templates/Includes/AppBrand.ss` template
