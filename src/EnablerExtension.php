@@ -17,6 +17,8 @@ use SilverStripe\i18n\i18n;
  * Particular actions can be set to be ignored by including them in the `excluded_actions` list
  * defined in yml _config for this class. By default all allowed actions on the Security controller
  * excepting `index` and `ping` will have the new theme set applied.
+ *
+ * @extends Extension<Security>
  */
 class EnablerExtension extends Extension
 {
@@ -57,9 +59,7 @@ class EnablerExtension extends Extension
     public function beforeCallActionHandler()
     {
         $config = Config::inst();
-        /** @var Security $owner */
-        $owner = $this->getOwner();
-        $action = $owner->getAction();
+        $action = $this->getOwner()->getAction();
         $allowedActions = $config->get(Security::class, 'allowed_actions');
         $excludedActions = $config->get(self::class, 'excluded_actions');
         $themeActions = array_diff($allowedActions ?? [], $excludedActions);
