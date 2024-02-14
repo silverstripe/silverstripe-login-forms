@@ -2,6 +2,7 @@
 
 namespace SilverStripe\LoginForms;
 
+use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\View\SSViewer;
 use SilverStripe\Core\Extension;
 use SilverStripe\Security\Security;
@@ -72,7 +73,7 @@ class EnablerExtension extends Extension
 
     public function afterCallActionHandler()
     {
-        Config::inst()->set(Security::class, 'page_class', $this->defaultPageClass);
+        Config::modify()->set(Security::class, 'page_class', $this->defaultPageClass);
     }
 
     /**
@@ -93,5 +94,13 @@ class EnablerExtension extends Extension
     public function darkModeIsEnabled()
     {
         return Security::config()->get('enable_dark_mode');
+    }
+
+    public function MetaTags(?bool $showTitle = true): string
+    {
+        if (class_exists(SiteTree::class)) {
+            return SiteTree::create()->MetaTags($showTitle);
+        }
+        return '';
     }
 }
