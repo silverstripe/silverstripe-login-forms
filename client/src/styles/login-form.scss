@@ -14,7 +14,7 @@ html {
   padding: var(--spacing-form);
   width: 100vw;
 
-  @media (min-width: 420px) {
+  @media (width >= 420px) {
     border-radius: var(--border-radius-form);
     padding: var(--spacing-form-desktop);
     width: auto;
@@ -143,7 +143,7 @@ input[type="submit"] {
     }
   }
 
-  &:not(:disabled):not(.disabled) {
+  &:not(:disabled, .disabled) {
     &:hover,
     &:focus,
     &.focus,
@@ -178,7 +178,7 @@ input[type="submit"] {
     }
   }
 
-  &:not(:disabled):not(.disabled) {
+  &:not(:disabled, .disabled) {
     &:hover,
     &:focus,
     &.focus,
@@ -213,14 +213,15 @@ input[type="checkbox"] {
 
   // Style the notch on the popup bottle for each possible position
   $positions: top, bottom, left, right;
+
   @each $pos in $positions {
     &.bs-popover-auto[x-placement^="#{$pos}"],
     &.bs-popover-#{$pos} {
-      & > .arrow::before {
+      > .arrow:before {
         border-#{$pos}-color: var(--color-field-border);
       }
 
-      & > .arrow::after {
+      > .arrow:after {
         border-#{$pos}-color: var(--color-form-background);
       }
     }

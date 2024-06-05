@@ -7,12 +7,10 @@
     --color-button-primary-hover-background: #{$dark-color-button-primary-hover-background};
     --color-button-primary-text: #{$dark-color-button-primary-text};
     --color-button-primary-hover-text: #{$dark-color-button-primary-hover-text};
-
     --color-button-secondary-background: transparent;
     --color-button-secondary-hover-background: #{$dark-color-button-secondary-hover-background};
     --color-button-secondary-text: #{$dark-color-button-secondary-text};
     --color-button-secondary-hover-text: #{$dark-color-button-secondary-hover-text};
-
     --color-field-background: #{$dark-color-field-background};
     --color-field-border: #{$dark-color-field-border};
     --color-field-text: #{$dark-color-field-text};
@@ -31,6 +29,7 @@
   &__logo--dark-mode {
     display: none;
   }
+
   @media (prefers-color-scheme: dark) {
     &__logo--light-mode {
       display: none;
