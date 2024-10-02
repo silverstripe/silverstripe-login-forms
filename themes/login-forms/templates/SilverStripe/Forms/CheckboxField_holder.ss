@@ -1,5 +1,5 @@
 <div id="$HolderID" class="field<% if extraClass %> $extraClass<% end_if %>">
-    $Field
+    $renderField
     <label class="right" for="$ID">
         $Title
         <% if $RightTitle %> $RightTitle<% end_if %>
