@@ -23,9 +23,8 @@
   },
   "homepage": "https://github.com/silverstripe/login-forms#readme",
   "dependencies": {
-    "bootstrap": "^4.6.2",
-    "jquery": "^3.6.1",
-    "popper.js": "^1.14.3"
+    "bootstrap": "^5.2.0",
+    "@popperjs/core": "^2.11.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
