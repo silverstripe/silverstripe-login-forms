@@ -30,9 +30,24 @@ class EnablerExtensionTest extends FunctionalTest
         ]);
     }
 
-    public function testThatSecurityActionsHaveUpdatedThemeListApplied()
+    public static function provideThatSecurityActionsHaveUpdatedThemeListApplied(): array
     {
-        $this->get(Security::login_url());
+        return [
+            'regular' => [
+                'url' => '/Security/login'
+            ],
+            'mixed-case' => [
+                'url' => '/Security/lOgIn'
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider provideThatSecurityActionsHaveUpdatedThemeListApplied
+     */
+    public function testThatSecurityActionsHaveUpdatedThemeListApplied(string $url)
+    {
+        $this->get($url);
         $this->assertContains('silverstripe/login-forms:login-forms', SSViewer::get_themes());
     }
 
