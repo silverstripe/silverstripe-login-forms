@@ -59,9 +59,12 @@ class EnablerExtension extends Extension
     protected function beforeCallActionHandler()
     {
         $config = Config::inst();
-        $action = $this->getOwner()->getAction();
+        // Routes are case-insensitive, so compare everything using lower case
+        $action = strtolower($this->getOwner()->getAction());
         $allowedActions = $config->get(Security::class, 'allowed_actions');
+        $allowedActions = array_map('strtolower', $allowedActions);
         $excludedActions = $config->get(EnablerExtension::class, 'excluded_actions');
+        $excludedActions = array_map('strtolower', $excludedActions);
         $themeActions = array_diff($allowedActions ?? [], $excludedActions);
         if (in_array($action, $themeActions ?? [])) {
             SSViewer::set_themes($config->get(EnablerExtension::class, 'login_themes'));
