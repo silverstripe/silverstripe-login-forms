@@ -2,6 +2,7 @@
 
 namespace SilverStripe\LoginForms\Tests;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Dev\FunctionalTest;
 use SilverStripe\LoginForms\EnablerExtension;
@@ -42,9 +43,7 @@ class EnablerExtensionTest extends FunctionalTest
         ];
     }
 
-    /**
-     * @dataProvider provideThatSecurityActionsHaveUpdatedThemeListApplied
-     */
+    #[DataProvider('provideThatSecurityActionsHaveUpdatedThemeListApplied')]
     public function testThatSecurityActionsHaveUpdatedThemeListApplied(string $url)
     {
         $this->get($url);
