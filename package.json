@@ -24,7 +24,8 @@
   "homepage": "https://github.com/silverstripe/login-forms#readme",
   "dependencies": {
     "@popperjs/core": "^2.11.6",
-    "bootstrap": "^5.2.0"
+    "bootstrap": "^5.2.0",
+    "lodash.debounce": "^4.0.8"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",

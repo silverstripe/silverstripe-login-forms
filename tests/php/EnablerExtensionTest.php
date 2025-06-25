@@ -7,6 +7,7 @@ use SilverStripe\Dev\FunctionalTest;
 use SilverStripe\LoginForms\EnablerExtension;
 use SilverStripe\Security\Security;
 use SilverStripe\View\SSViewer;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class EnablerExtensionTest extends FunctionalTest
 {
@@ -42,9 +43,7 @@ class EnablerExtensionTest extends FunctionalTest
         ];
     }
 
-    /**
-     * @dataProvider provideThatSecurityActionsHaveUpdatedThemeListApplied
-     */
+    #[DataProvider('provideThatSecurityActionsHaveUpdatedThemeListApplied')]
     public function testThatSecurityActionsHaveUpdatedThemeListApplied(string $url)
     {
         $this->get($url);

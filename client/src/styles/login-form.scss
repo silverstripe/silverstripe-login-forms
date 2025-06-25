@@ -37,6 +37,12 @@ html {
   }
 }
 
+.login-form .passwordstrength .alert {
+  margin-top: -20px;
+  width: 100%;
+  max-width: var(--sizing-content-width);
+}
+
 .login-form__header {
   display: flex;
   align-items: center;
