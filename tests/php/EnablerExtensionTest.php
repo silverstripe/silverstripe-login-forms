@@ -2,6 +2,7 @@
 
 namespace SilverStripe\LoginForms\Tests;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Dev\FunctionalTest;
 use SilverStripe\LoginForms\EnablerExtension;
