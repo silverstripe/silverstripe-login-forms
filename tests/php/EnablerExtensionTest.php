@@ -8,7 +8,6 @@ use SilverStripe\Dev\FunctionalTest;
 use SilverStripe\LoginForms\EnablerExtension;
 use SilverStripe\Security\Security;
 use SilverStripe\View\SSViewer;
-use PHPUnit\Framework\Attributes\DataProvider;
 
 class EnablerExtensionTest extends FunctionalTest
 {
