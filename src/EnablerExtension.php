@@ -78,6 +78,12 @@ class EnablerExtension extends Extension
         Config::inst()->set(Security::class, 'page_class', $this->defaultPageClass);
     }
 
+    public function onBeforeSecurityLogin()
+    {
+        SSViewer::set_themes(Config::inst()->get(EnablerExtension::class, 'login_themes'));
+        Config::modify()->remove(Security::class, 'page_class');
+    }
+
     /**
      * Returns an RFC1766 compliant locale string, e.g. 'fr-CA'.
      *
