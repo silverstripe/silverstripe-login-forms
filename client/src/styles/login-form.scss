@@ -22,8 +22,7 @@ html {
 
   // Note: nested for specificity priority against silverstripe/admin styles
   .login-form-control--text .login-form-control__field,
-  input.text,
-  input.text:focus {
+  input.text {
     background-color: var(--color-field-background);
     border: 1px solid var(--color-field-border);
     border-radius: var(--border-radius-field);
@@ -33,6 +32,12 @@ html {
 
     @media (min-width: $mobile-breakpoint) {
       width: var(--sizing-content-width);
+    }
+
+    &:focus {
+      background-color: var(--color-field-background);
+      border-color: var(--color-field-border);
+      color: var(--color-field-text);
     }
   }
 }
@@ -122,6 +127,11 @@ fieldset {
   &:disabled,
   &[readonly] {
     cursor: not-allowed;
+  }
+
+  // override bootstrap style
+  &:focus-visible {
+    outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-outline-color)
   }
 }
 
